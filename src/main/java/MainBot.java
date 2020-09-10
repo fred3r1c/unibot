@@ -47,7 +47,7 @@ public class MainBot {
         MessageEmbed me = eb.build();
 
         EventListener.botkonsole.sendMessage(me).queue();
-        EventListener.botkonsole.sendMessage("@M̶̿̉o̷̝͂r̴̊̉i̴͐̈́t̶̾̎z̵͗̓#1991");
+        EventListener.botkonsole.sendMessage("@M̶̿̉o̷̝͂r̴̊̉i̴͐̈́t̶̾̎z̵͗̓#1991").queue();
     }
 
 }
