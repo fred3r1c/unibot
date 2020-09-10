@@ -1,6 +1,7 @@
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.GuildChannel;
 import net.dv8tion.jda.api.entities.TextChannel;
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.events.message.priv.PrivateMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
@@ -20,8 +21,17 @@ public class EventListener extends ListenerAdapter {
     public void onPrivateMessageReceived(PrivateMessageReceivedEvent event){
         if (event.getAuthor().equals(MainBot.jda.getSelfUser()))
             return;
-        msg("hab dich lieb, mein Schöpfer");
         event.getChannel().sendMessage("Hallo du hurensohn").queue();
+
+    }
+
+    @Override
+    public void onMessageReceived(MessageReceivedEvent event){
+        if (event.getAuthor().equals(MainBot.jda.getSelfUser()))
+            return;
+        if (event.getTextChannel().equals(botcommands)){
+            event.getAuthor().openPrivateChannel().queue(channel -> channel.sendMessage("Hallo, ich bin ein Bot und kann noch nix :)").queue());
+        }
 
     }
 
