@@ -1,11 +1,14 @@
+import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
+import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.ChunkingFilter;
 import net.dv8tion.jda.api.utils.MemberCachePolicy;
 
 import javax.security.auth.login.LoginException;
+import java.awt.*;
 
 public class MainBot {
 
@@ -26,6 +29,25 @@ public class MainBot {
             jda.addEventListener(new EventListener());
         } catch (LoginException | InterruptedException ignored){}
 
+        startMessageBot();
+
+
+    }
+
+    public static void startMessageBot() {
+
+        EmbedBuilder eb = new EmbedBuilder();
+
+        eb.setAuthor("Uni-Bot_EIT");
+        eb.setTitle("Hallo, ich bin der Uni-Bot dieses Discords.\n\n bei Fragen oder anregungen bezüglich mir richte dich an meinen Schöpfer @M̶̿̉o̷̝͂r̴̊̉i̴͐̈́t̶̾̎z̵͗̓#1991", "https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=43");
+        eb.addField("", "Mit !help, !h und !hilfe (entweder privat an mich direkt oder im bot-command Channel, bekommst du eine private nachricht mit all meinen Befehelen",false);
+        eb.setThumbnail("https://secure.meetupstatic.com/photos/event/2/5/0/f/highres_456969487.jpeg");
+        eb.setFooter("Nicht auf den Titel klicken");
+        eb.setColor(Color.blue);
+
+        MessageEmbed me = eb.build();
+
+        EventListener.botkonsole.sendMessage(me).queue();
     }
 
 }
