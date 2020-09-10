@@ -12,7 +12,7 @@ public class EventListener extends ListenerAdapter {
     public static final TextChannel botcommands = guild.getTextChannelById("753640254917050579");
     public static final TextChannel botkonsole = guild.getTextChannelById("753640621855604908");
     public void msg(String msg){
-        botkonsole.sendMessage(msg);
+        botkonsole.sendMessage(msg).queue();
     }
 
 
