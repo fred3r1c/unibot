@@ -9,7 +9,7 @@
         <module name="Bot.EIT2020" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="9">
       <module name="Bot.EIT2020" target="9" />
     </bytecodeTargetLevel>
   </component>
