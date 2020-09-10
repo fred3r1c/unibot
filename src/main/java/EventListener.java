@@ -24,27 +24,9 @@ public class EventListener extends ListenerAdapter {
         if (event.getAuthor().equals(MainBot.jda.getSelfUser()))
             return;
 
-        Commands commands = Commands.eval(event.getMessage().getContentRaw());
 
-        switch (commands) {
+        event.getChannel().sendMessage(befehlAusführen(event.getMessage().getContentRaw())).queue();
 
-            case hallo:
-                event.getChannel().sendMessage("Hallo, ich bin ein Bot und kann noch nix :)").queue();
-                break;
-
-            case termine:
-                event.getChannel().sendMessage("Das Termin-feature ist noch in der Entwicklung").queue();
-                break;
-
-            case help:
-                event.getChannel().sendMessage("Das Help-feature ist noch in der Entwicklung\nBis dahin: https://www.youtube.com/watch?v=Dh-CW22axyY").queue();
-                break;
-
-            case unknown:
-                event.getChannel().sendMessage("unknown command ").queue();
-                break;
-
-        }
     }
 
     @Override
@@ -56,25 +38,27 @@ public class EventListener extends ListenerAdapter {
         if (!event.getTextChannel().equals(botcommands))
             return;
 
-        Commands commands = Commands.eval(event.getMessage().getContentRaw());
+        event.getAuthor().openPrivateChannel().queue(channel -> channel.sendMessage(befehlAusführen(event.getMessage().getContentRaw())).queue());
+
+    }
+
+    public String befehlAusführen(String msg){
+
+        Commands commands = Commands.eval(msg);
 
         switch (commands){
 
             case hallo:
-                event.getAuthor().openPrivateChannel().queue(channel -> channel.sendMessage("Hallo, ich bin ein Bot und kann noch nix :)").queue());
-                break;
+                return "Hallo, ich bin ein Bot und kann noch nix :)";
 
             case termine:
-                event.getAuthor().openPrivateChannel().queue(channel -> channel.sendMessage("Das Termin-feature ist noch in der Entwicklung").queue());
-                break;
+                return "Das Termin-feature ist noch in der Entwicklung";
 
             case help:
-                event.getAuthor().openPrivateChannel().queue(channel -> channel.sendMessage("Das Help-feature ist noch in der Entwicklung\nBis dahin: https://www.youtube.com/watch?v=Dh-CW22axyY").queue());
-                break;
+                return "Das Help-feature ist noch in der Entwicklung\nBis dahin: https://www.youtube.com/watch?v=Dh-CW22axyY";
 
-            case unknown:
-                event.getAuthor().openPrivateChannel().queue(channel -> channel.sendMessage("unknown command ").queue());
-                break;
+            default:
+                return "lul, hastu du gut gemacht";
 
         }
 

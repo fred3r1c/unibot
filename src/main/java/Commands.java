@@ -14,7 +14,7 @@ public enum Commands {
 
         if (msg.equals("!help") || msg.equals("!h") || msg.equals("!hilfe"))
             return help;
-
+        
         return unknown;
     }
 }
