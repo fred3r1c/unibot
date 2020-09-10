@@ -1,4 +1,5 @@
 import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.PrivateChannel;
 import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.events.message.priv.PrivateMessageReceivedEvent;
@@ -18,11 +19,32 @@ public class EventListener extends ListenerAdapter {
 
 
     @Override
-    public void onPrivateMessageReceived(PrivateMessageReceivedEvent event){
+    public void onPrivateMessageReceived(PrivateMessageReceivedEvent event) {
+
         if (event.getAuthor().equals(MainBot.jda.getSelfUser()))
             return;
-        event.getChannel().sendMessage("Hallo du hurensohn").queue();
 
+        Commands commands = Commands.eval(event.getMessage().getContentRaw());
+
+        switch (commands) {
+
+            case hallo:
+                event.getChannel().sendMessage("Hallo, ich bin ein Bot und kann noch nix :)").queue();
+                break;
+
+            case termine:
+                event.getChannel().sendMessage("Das Termin-feature ist noch in der Entwicklung").queue();
+                break;
+
+            case help:
+                event.getChannel().sendMessage("Das Help-feature ist noch in der Entwicklung\nBis dahin: https://www.youtube.com/watch?v=Dh-CW22axyY").queue();
+                break;
+
+            case unknown:
+                event.getChannel().sendMessage("unknown command ").queue();
+                break;
+
+        }
     }
 
     @Override
@@ -35,7 +57,6 @@ public class EventListener extends ListenerAdapter {
             return;
 
         Commands commands = Commands.eval(event.getMessage().getContentRaw());
-        msg(commands.toString());
 
         switch (commands){
 
@@ -54,8 +75,8 @@ public class EventListener extends ListenerAdapter {
             case unknown:
                 event.getAuthor().openPrivateChannel().queue(channel -> channel.sendMessage("unknown command ").queue());
                 break;
-        }
 
+        }
 
     }
 
