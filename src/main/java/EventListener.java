@@ -46,6 +46,9 @@ public class EventListener extends ListenerAdapter {
                 event.getAuthor().openPrivateChannel().queue(channel -> channel.sendMessage("Das Termin-feature ist noch in der Entwicklung").queue());
                 break;
 
+            case help:
+                event.getAuthor().openPrivateChannel().queue(channel -> channel.sendMessage("Das Help-feature ist noch in der Entwicklung\nBis dahin: https://www.youtube.com/watch?v=Dh-CW22axyY").queue());
+
             case unknown:
                 event.getAuthor().openPrivateChannel().queue(channel -> channel.sendMessage("unknown command ").queue());
         }
