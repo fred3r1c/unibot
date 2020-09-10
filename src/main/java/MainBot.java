@@ -21,9 +21,9 @@ public class MainBot {
             builder.setChunkingFilter(ChunkingFilter.ALL);
             builder.setMemberCachePolicy(MemberCachePolicy.ALL);
             JDA jda = builder.build();
-            //jda.awaitReady();
+            jda.awaitReady();
             jda.addEventListener(new EventListener());
-        } catch (LoginException e){}
+        } catch (LoginException | InterruptedException ignored){}
 
     }
 
