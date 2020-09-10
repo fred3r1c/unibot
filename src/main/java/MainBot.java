@@ -39,7 +39,7 @@ public class MainBot {
         EmbedBuilder eb = new EmbedBuilder();
 
         eb.setAuthor("Uni-Bot_EIT");
-        eb.setTitle("Hallo, ich bin der Uni-Bot dieses Discords.\n\n Mit !help, !h und !hilfe (entweder privat an mich direkt oder im bot-command Channel), bekommst du eine private nachricht mit all meinen Befehelen");
+        eb.setTitle("Hallo, ich bin der Uni-Bot dieses Discords.\n\nMit !help, !h und !hilfe (entweder privat an mich direkt oder im bot-command Channel), bekommst du eine private nachricht mit all meinen Befehelen");
         eb.addField("", "bei Fragen oder anregungen bezüglich mir richte dich an meinen Schöpfer M̶̿̉o̷̝͂r̴̊̉i̴͐̈́t̶̾̎z̵͗̓ oder andere mit der \"Bot-Programmer\" Rolle.",false);
         eb.setThumbnail("https://secure.meetupstatic.com/photos/event/2/5/0/f/highres_456969487.jpeg");
         eb.setColor(Color.blue);
