@@ -39,7 +39,7 @@ public class MainBot {
         EmbedBuilder eb = new EmbedBuilder();
 
         eb.setAuthor("Uni-Bot_EIT");
-        eb.setTitle("Hallo, ich bin der Uni-Bot dieses Discords.\n\n bei Fragen oder anregungen bezüglich mir richte dich an meinen Schöpfer @M̶̿̉o̷̝͂r̴̊̉i̴͐̈́t̶̾̎z̵͗̓#1991", "https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=43");
+        eb.setTitle("Hallo, ich bin der Uni-Bot dieses Discords.\n\n bei Fragen oder anregungen bezüglich mir richte dich an meinen Schöpfer @M̶̿̉o̷̝͂r̴̊̉i̴͐̈́t̶̾̎z̵͗̓#1991",); //https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=43
         eb.addField("", "Mit !help, !h und !hilfe (entweder privat an mich direkt oder im bot-command Channel, bekommst du eine private nachricht mit all meinen Befehelen",false);
         eb.setThumbnail("https://secure.meetupstatic.com/photos/event/2/5/0/f/highres_456969487.jpeg");
         eb.setFooter("Nicht auf den Titel klicken");
