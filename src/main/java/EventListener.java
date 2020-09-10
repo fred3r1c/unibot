@@ -58,7 +58,7 @@ public class EventListener extends ListenerAdapter {
                 return "Das Help-feature ist noch in der Entwicklung\nBis dahin: https://www.youtube.com/watch?v=Dh-CW22axyY";
 
             default:
-                return "lul, hastu du gut gemacht";
+                return "Unbekannter Befehl, sryyyyy OwO";
 
         }
 

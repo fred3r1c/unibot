@@ -40,13 +40,13 @@ public class MainBot {
 
         eb.setAuthor("Uni-Bot_EIT");
         eb.setTitle("Hallo, ich bin der Uni-Bot dieses Discords.\n\n Mit !help, !h und !hilfe (entweder privat an mich direkt oder im bot-command Channel), bekommst du eine private nachricht mit all meinen Befehelen");
-        eb.addField("", "bei Fragen oder anregungen bezüglich mir richte dich an meinen Schöpfer M̶̿̉o̷̝͂r̴̊̉i̴͐̈́t̶̾̎z̵͗̓",false);
+        eb.addField("", "bei Fragen oder anregungen bezüglich mir richte dich an meinen Schöpfer M̶̿̉o̷̝͂r̴̊̉i̴͐̈́t̶̾̎z̵͗̓ oder andere mit der \"Bot-Programmer\" Rolle.",false);
         eb.setThumbnail("https://secure.meetupstatic.com/photos/event/2/5/0/f/highres_456969487.jpeg");
         eb.setColor(Color.blue);
 
         MessageEmbed me = eb.build();
 
-        EventListener.botkonsole.sendMessage(me).queue();
+        EventListener.guild.getTextChannelById(740970939616985088).sendMessage(me).queue();
     }
 
 }
