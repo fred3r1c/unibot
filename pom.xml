@@ -6,7 +6,7 @@
 
     <groupId>Bot.EIT2020</groupId>
     <artifactId>Bot.EIT2020</artifactId>
-    <version>0.5 alpha</version>
+    <version>0.1</version>
     <name>Bot</name>
 
     <build>
