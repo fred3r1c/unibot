@@ -35,6 +35,7 @@ public class EventListener extends ListenerAdapter {
             return;
 
         Commands commands = Commands.eval(event.getMessage().getContentRaw());
+        msg(commands.toString());
 
         switch (commands){
 
@@ -48,9 +49,11 @@ public class EventListener extends ListenerAdapter {
 
             case help:
                 event.getAuthor().openPrivateChannel().queue(channel -> channel.sendMessage("Das Help-feature ist noch in der Entwicklung\nBis dahin: https://www.youtube.com/watch?v=Dh-CW22axyY").queue());
+                break;
 
             case unknown:
                 event.getAuthor().openPrivateChannel().queue(channel -> channel.sendMessage("unknown command ").queue());
+                break;
         }
 
 
