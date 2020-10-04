@@ -8,13 +8,6 @@ public class Ausgaben {
 
     }
 
-    public static Message testMention (String name){
-
-        MessageBuilder builder = new MessageBuilder("@"+ name);
-        builder.allowMentions(Message.MentionType.USER);
-        return builder.build();
-
-    }
 
 
 }

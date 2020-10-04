@@ -29,8 +29,8 @@ public class MainBot {
             jda.addEventListener(new EventListener());
         } catch (LoginException | InterruptedException ignored){}
 
-        startMessageBot();
-        //testMention("M̶̿̉o̷̝͂r̴̊̉i̴͐̈́t̶̾̎z̵͗̓");
+        //startMessageBot();
+        //testNachrich();
 
 
     }
@@ -51,9 +51,8 @@ public class MainBot {
 
     }
 
-    public static void testMention(String string){
-
-        EventListener.guild.getTextChannelById("753640621855604908").sendMessage("Hey <@411138870793469952> are you there?").queue();
+    public static void testNachricht(){
+        EventListener.guild.getTextChannelById("740970939616985088").sendMessage("https://cdn.discordapp.com/attachments/753618061092847729/761288403261587476/Fachsemester_1_Stundenplan-1.jpg").queue();
     }
 
 }
