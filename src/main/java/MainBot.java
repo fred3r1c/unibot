@@ -30,7 +30,7 @@ public class MainBot {
         } catch (LoginException | InterruptedException ignored){}
 
         //startMessageBot();
-        testNachricht();
+        //testNachricht();
 
 
     }

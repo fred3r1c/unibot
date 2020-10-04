@@ -1,6 +1,5 @@
-import net.dv8tion.jda.api.entities.Guild;
-import net.dv8tion.jda.api.entities.PrivateChannel;
-import net.dv8tion.jda.api.entities.TextChannel;
+import net.dv8tion.jda.api.MessageBuilder;
+import net.dv8tion.jda.api.entities.*;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.events.message.priv.PrivateMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -24,8 +23,7 @@ public class EventListener extends ListenerAdapter {
         if (event.getAuthor().equals(MainBot.jda.getSelfUser()))
             return;
 
-
-        event.getChannel().sendMessage(befehlAusführen(event.getMessage().getContentRaw())).queue();
+        befehlAusfuehren(event.getAuthor(), event.getMessage());
 
     }
 
@@ -38,33 +36,40 @@ public class EventListener extends ListenerAdapter {
         if (!event.getTextChannel().equals(botcommands))
             return;
 
-        event.getAuthor().openPrivateChannel().queue(channel -> channel.sendMessage(befehlAusführen(event.getMessage().getContentRaw())).queue());
+        befehlAusfuehren(event.getAuthor(), event.getMessage());
 
     }
 
-    public String befehlAusführen(String msg){
+    public void befehlAusfuehren(User user, Message message){
 
-        Commands commands = Commands.eval(msg);
+        Commands commands = Commands.eval(message.getContentRaw());
+        MessageBuilder messageBuilder = new MessageBuilder();
 
         switch (commands){
 
             case hallo:
-                return "Hallo, ich bin ein Bot und kann noch nix :)";
+                messageBuilder.setContent("Hallo, ich bin ein Bot und kann noch nix :)");
+                break;
 
             case termine:
-                return "Das Termin-feature ist noch in der Entwicklung";
+                messageBuilder.setContent("Das Termin-feature ist noch in der Entwicklung");
+                break;
 
             case help:
-                return "Das Help-feature ist noch in der Entwicklung\nBis dahin: https://www.youtube.com/watch?v=Dh-CW22axyY";
+                messageBuilder.setContent("Das Help-feature ist noch in der Entwicklung\nBis dahin: https://www.youtube.com/watch?v=Dh-CW22axyY");
+                break;
 
+            case unknown:
+                messageBuilder.setContent("Unbekannter Befehl, sryyyyy OwO");
 
             case stundenplan:
-                Ausgaben.stundenplan();
-                return null;
-            default:
-                return "Unbekannter Befehl, sryyyyy OwO";
+
+                Ausgaben.stundenplan(user);
+                return;
 
         }
+
+         user.openPrivateChannel().queue(channel -> channel.sendMessage(messageBuilder.build()).queue());;
 
     }
 
