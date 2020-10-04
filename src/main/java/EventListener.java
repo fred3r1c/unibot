@@ -1,6 +1,5 @@
 import net.dv8tion.jda.api.MessageBuilder;
 import net.dv8tion.jda.api.entities.*;
-import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.events.message.priv.PrivateMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -33,8 +32,6 @@ public class EventListener extends ListenerAdapter {
 
         if (event.getAuthor().equals(MainBot.jda.getSelfUser()))
             return;
-
-        System.out.println("haha lol");
 
         if (!event.getChannel().equals(botcommands))
             return;
