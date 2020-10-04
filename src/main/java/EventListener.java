@@ -1,6 +1,7 @@
 import net.dv8tion.jda.api.MessageBuilder;
 import net.dv8tion.jda.api.entities.*;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.events.message.priv.PrivateMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
@@ -28,14 +29,14 @@ public class EventListener extends ListenerAdapter {
     }
 
     @Override
-    public void onMessageReceived(MessageReceivedEvent event){
+    public void onGuildMessageReceived(GuildMessageReceivedEvent event){
 
         if (event.getAuthor().equals(MainBot.jda.getSelfUser()))
             return;
 
         System.out.println("haha lol");
 
-        if (!event.getTextChannel().equals(botcommands))
+        if (!event.getChannel().equals(botcommands))
             return;
 
         befehlAusfuehren(event.getAuthor(), event.getMessage());
