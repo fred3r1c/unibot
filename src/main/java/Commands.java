@@ -1,6 +1,6 @@
 public enum Commands {
 
-    hallo, unknown, termine, help;
+    hallo, unknown, termine, help, stundenplan;
 
     public static Commands eval(String msg) {
 
@@ -14,6 +14,9 @@ public enum Commands {
 
         if (msg.equals("!help") || msg.equals("!h") || msg.equals("!hilfe"))
             return help;
+
+        if (msg.equals("!stundenplan") || msg.equals("!plan"))
+            return stundenplan;
         
         return unknown;
     }

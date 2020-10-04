@@ -57,6 +57,10 @@ public class EventListener extends ListenerAdapter {
             case help:
                 return "Das Help-feature ist noch in der Entwicklung\nBis dahin: https://www.youtube.com/watch?v=Dh-CW22axyY";
 
+
+            case stundenplan:
+                Ausgaben.stundenplan();
+                return null;
             default:
                 return "Unbekannter Befehl, sryyyyy OwO";
 
