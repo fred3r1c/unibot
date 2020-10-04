@@ -61,7 +61,7 @@ public class EventListener extends ListenerAdapter {
 
             case unknown:
                 messageBuilder.setContent("Unbekannter Befehl, sryyyyy OwO");
-                return;
+                break;
 
             case stundenplan:
 
