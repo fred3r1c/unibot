@@ -16,12 +16,10 @@ public class Ausgaben {
     public static Message stundenplan(User user){
 
 
-        File file = new File("..\\\\resources/Files/Fachsemester_1_Stundenplan.pdf");
+        File file = new File(System.getProperty("user.dir") + "Fachsemester_1_Stundenplan.pdf");
 
-        user.openPrivateChannel().queue(channel -> channel.sendMessage(resources).queue());
+        user.openPrivateChannel().queue(channel -> channel.sendMessage("anfang " + resources + " ende").queue());
         user.openPrivateChannel().queue(channel -> channel.sendFile(file, file.getName()).queue());
-
-        //lol ich bin dumm
 
         return null;
     }
