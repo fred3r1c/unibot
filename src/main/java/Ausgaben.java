@@ -16,8 +16,8 @@ public class Ausgaben {
         File filePNG = new File("//var//lib//jenkins//workspace//MoritzUnibot//src//main//resources//Files//Fachsemester_1_Stundenplan.PNG");
         File filepdf = new File("//var//lib//jenkins//workspace//MoritzUnibot//src//main//resources//Files//Fachsemester_1_Stundenplan.pdf");
 
-        user.openPrivateChannel().queue(channel -> channel.sendFile(filepdf, filepdf.getName()).queue());
         user.openPrivateChannel().queue(channel -> channel.sendFile(filePNG, filePNG.getName()).queue());
+        user.openPrivateChannel().queue(channel -> channel.sendFile(filepdf, filepdf.getName()).queue());
 
         return null;
     }
