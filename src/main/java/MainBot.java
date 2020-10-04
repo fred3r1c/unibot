@@ -48,6 +48,7 @@ public class MainBot {
         MessageEmbed me = eb.build();
 
         EventListener.guild.getTextChannelById("740970939616985088").sendMessage(me).queue();
+
     }
 
     public static void testMention(String string){
