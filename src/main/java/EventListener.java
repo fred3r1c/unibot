@@ -69,7 +69,7 @@ public class EventListener extends ListenerAdapter {
 
             case conversation:
                 Ausgaben.conversation(user);
-                return
+                return;
         }
 
          user.openPrivateChannel().queue(channel -> channel.sendMessage(messageBuilder.build()).queue());;
