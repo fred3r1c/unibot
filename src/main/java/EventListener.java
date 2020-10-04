@@ -33,6 +33,8 @@ public class EventListener extends ListenerAdapter {
         if (event.getAuthor().equals(MainBot.jda.getSelfUser()))
             return;
 
+        System.out.println("haha lol");
+
         if (!event.getTextChannel().equals(botcommands))
             return;
 
