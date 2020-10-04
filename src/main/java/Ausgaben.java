@@ -49,7 +49,7 @@ public class Ausgaben {
                 "Ne, find ich jetzt nicht, aber kannst du ruhig so machen.",
                 "Das würde ich an deiner Stelle nicht tun...",
                 "ok",
-                "Uhhh, sehr sexy",
+                "Uhhh, sehr sexy:smirk::smirk::smirk:!",
                 "Alles klar, let's GOOOOO!!!"};
 
         int random = randy.nextInt(messages.length);
