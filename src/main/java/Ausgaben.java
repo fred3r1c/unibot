@@ -5,16 +5,26 @@ import net.dv8tion.jda.api.entities.User;
 
 import java.awt.*;
 import java.io.File;
+import java.net.URISyntaxException;
 import java.util.Random;
 
 public class Ausgaben {
 
     static Random randy = new Random();
 
+    private static File loadResource(String name){
+        try {
+            return new File(Ausgaben.class.getClassLoader().getResource(name).toURI());
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+            return new File("");
+        }
+    }
+
     public static void stundenplan (User user){
 
-        File filePNG = new File("//var//lib//jenkins//workspace//MoritzUnibot//src//main//resources//Files//Fachsemester_1_Stundenplan.PNG");
-        File filepdf = new File("//var//lib//jenkins//workspace//MoritzUnibot//src//main//resources//Files//Fachsemester_1_Stundenplan.pdf");
+        File filePNG = loadResource("Files/Fachsemester_1_Stundenplan.PNG");
+        File filepdf = loadResource("Files/Fachsemester_1_Stundenplan.pdf");
 
         user.openPrivateChannel().queue(channel -> channel.sendFile(filePNG, filePNG.getName()).queue());
         user.openPrivateChannel().queue(channel -> channel.sendFile(filepdf, filepdf.getName()).queue());
