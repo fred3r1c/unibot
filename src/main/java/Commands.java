@@ -1,10 +1,13 @@
 public enum Commands {
 
-    hallo, unknown, termine, help, stundenplan;
+    hallo, unknown, termine, help, stundenplan, conversation;
 
     public static Commands eval(String msg) {
 
         msg = msg.toLowerCase();
+        
+        if (!msg.startsWith("!")) 
+            return conversation;
 
         if(msg.equals("!hallo"))
             return hallo;

@@ -5,10 +5,13 @@ import net.dv8tion.jda.api.entities.User;
 
 import java.awt.*;
 import java.io.File;
+import java.util.Random;
 
 public class Ausgaben {
 
-    public static void stundenplan(User user){
+    static Random randy = new Random();
+
+    public static void stundenplan (User user){
 
         File filePNG = new File("//var//lib//jenkins//workspace//MoritzUnibot//src//main//resources//Files//Fachsemester_1_Stundenplan.PNG");
         File filepdf = new File("//var//lib//jenkins//workspace//MoritzUnibot//src//main//resources//Files//Fachsemester_1_Stundenplan.pdf");
@@ -36,6 +39,22 @@ public class Ausgaben {
 
         user.openPrivateChannel().queue(channel -> channel.sendMessage(embedBuilder.build()).queue());
 
+    }
+
+    public static void conversation (User user){
+
+        String[] messages = new String[]{
+                "Da stimm ich dir absolut zu!",
+                "Das sehe ich auch so.",
+                "Ne, find ich jetzt nicht, aber kannst du ruhig so machen.",
+                "Das würde ich an deiner Stelle nicht tun...",
+                "ok",
+                "Uhhh, sehr sexy",
+                "Alles klar, let's GOOOOO!!!"};
+
+        int random = randy.nextInt(messages.length);
+
+        user.openPrivateChannel().queue(channel -> channel.sendMessage(new MessageBuilder(messages[random]).build()).queue());
     }
 
 }

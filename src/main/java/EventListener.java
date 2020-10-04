@@ -64,10 +64,12 @@ public class EventListener extends ListenerAdapter {
                 break;
 
             case stundenplan:
-
                 Ausgaben.stundenplan(user);
                 return;
 
+            case conversation:
+                Ausgaben.conversation(user);
+                return
         }
 
          user.openPrivateChannel().queue(channel -> channel.sendMessage(messageBuilder.build()).queue());;
