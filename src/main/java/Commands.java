@@ -17,6 +17,7 @@ public enum Commands {
 
         if (msg.equals("!stundenplan") || msg.equals("!plan"))
             return stundenplan;
+
         
         return unknown;
     }
