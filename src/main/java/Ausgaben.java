@@ -25,13 +25,13 @@ public class Ausgaben {
         embedBuilder.setThumbnail("http://www.clipartbest.com/cliparts/9cp/oEb/9cpoEbagi.jpeg");
         embedBuilder.setAuthor("Fragen über mich? Hier erklär ich alles!");
         embedBuilder.addBlankField(false);
-        embedBuilder.addField("Befehle", "Alle Befehele für mich beginnen mit einem \"!\" damit ich erkennen kann, das es sich um einen Befehl handelt. Die Groß- und Kleinschreibung spielt keine Rolle.\n eine Liste aller Befehle erhälst du weiter unten.", false);
+        embedBuilder.addField("Befehle", "Alle Befehle für mich beginnen mit einem \"!\", damit ich erkennen kann, das es sich um einen Befehl handelt. Die Groß- und Kleinschreibung spielt keine Rolle.", false);
         embedBuilder.addField("Hier ist die Liste aller Befehele:", "", false);
-        embedBuilder.addField("!help / !h / !hilfe", "Damit sende ich dir diese Nachricht", true);
+        embedBuilder.addField("!help / !h / !hilfe", "Damit sende ich dir diese Nachricht.", true);
         embedBuilder.addField("!termine / !kalender", "Damit bekommst du eine Übersicht aller wichtigen Termine und Events die das Studium betreffen.", true);
         embedBuilder.addField("!stundenplan / !plan", "Damit bekommst du den aktuellen Stundenplan als Bild und als PDF von mir.", true);
         embedBuilder.addBlankField(false);
-        embedBuilder.addField("Die Befehle werden immer erweitert und aktuallisiert. Bei Fragen und Anregungen wende dich an meinen Schöpfer <@411138870793469952>.","", false);
+        embedBuilder.addField("Die Befehle werden immer erweitert und aktuallisiert. Bei Fragen und Anregungen wende dich an meinen Schöpfer @M̶̿̉o̷̝͂r̴̊̉i̴͐̈́t̶̾̎z̵͗̓.","", false);
         embedBuilder.setColor(Color.red);
 
         user.openPrivateChannel().queue(channel -> channel.sendMessage(embedBuilder.build()).queue());
