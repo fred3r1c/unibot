@@ -6,12 +6,19 @@ import java.io.File;
 
 public class Ausgaben {
 
+    public static String resources = System.getProperty("user.dir");
+
+    public Ausgaben(){
+
+
+    }
+
     public static Message stundenplan(User user){
 
 
         File file = new File("..\\\\resources/Files/Fachsemester_1_Stundenplan.pdf");
 
-        user.openPrivateChannel().queue(channel -> channel.sendMessage(file.getAbsolutePath()).queue());
+        user.openPrivateChannel().queue(channel -> channel.sendMessage(resources).queue());
         user.openPrivateChannel().queue(channel -> channel.sendFile(file, file.getName()).queue());
 
         //lol ich bin dumm
