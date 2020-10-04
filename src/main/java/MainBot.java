@@ -52,7 +52,7 @@ public class MainBot {
 
     public static void testMention(String string){
 
-        EventListener.guild.getTextChannelById("753640621855604908").sendMessage(Ausgaben.testMention(string)).queue();
+        EventListener.guild.getTextChannelById("753640621855604908").sendMessage("Hey <@411138870793469952> are you there?").queue();
     }
 
 }
