@@ -56,8 +56,8 @@ public class EventListener extends ListenerAdapter {
                 break;
 
             case help:
-                messageBuilder.setContent("Das Help-feature ist noch in der Entwicklung\nBis dahin: https://www.youtube.com/watch?v=Dh-CW22axyY");
-                break;
+                Ausgaben.help(user);
+                return;
 
             case unknown:
                 messageBuilder.setContent("Unbekannter Befehl, sryyyyy OwO");
