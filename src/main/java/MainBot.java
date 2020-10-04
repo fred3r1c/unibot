@@ -30,7 +30,7 @@ public class MainBot {
         } catch (LoginException | InterruptedException ignored){}
 
         //startMessageBot();
-        //testNachrich();
+        testNachrich();
 
 
     }
@@ -52,7 +52,7 @@ public class MainBot {
     }
 
     public static void testNachricht(){
-        EventListener.guild.getTextChannelById("740970939616985088").sendMessage("https://cdn.discordapp.com/attachments/753618061092847729/761288403261587476/Fachsemester_1_Stundenplan-1.jpg").queue();
+        EventListener.guild.getTextChannelById("753640621855604908").sendMessage("https://cdn.discordapp.com/attachments/753618061092847729/761288403261587476/Fachsemester_1_Stundenplan-1.jpg").queue();
     }
 
 }
