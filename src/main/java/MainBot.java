@@ -29,7 +29,7 @@ public class MainBot {
             jda.addEventListener(new EventListener());
         } catch (LoginException | InterruptedException ignored){}
 
-        //startMessageBot();
+        startMessageBot();
         //testNachricht();
 
 
@@ -47,7 +47,7 @@ public class MainBot {
 
         MessageEmbed me = eb.build();
 
-        EventListener.guild.getTextChannelById("740970939616985088").sendMessage(me).queue();
+        EventListener.guild.getTextChannelById("764937566926536775").sendMessage(me).queue();
 
     }
 
