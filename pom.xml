@@ -11,6 +11,14 @@
 
     <build>
 
+        <resources>
+            <resource>
+                <directory>${project.basedir}/conf</directory>
+            </resource>
+        </resources>
+
+        <sourceDirectory>${project.basedir}/src</sourceDirectory>
+
         <plugins>
             
             <plugin>
