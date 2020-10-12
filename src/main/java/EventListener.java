@@ -27,7 +27,7 @@ public class EventListener extends ListenerAdapter {
         rollenzuweisung.put("\uD83D\uDCF8", guild.getRoleById("764954188706611210")); //Insta
         rollenzuweisung.put("\uD83D\uDC7B", guild.getRoleById("764954190212235275")); //Snap
         rollenzuweisung.put("\uD83E\uDD86", guild.getRoleById("764954419832815686")); //Twitter
-        rollenzuweisung.put("", guild.getRoleById("764933443137175562")); //Among Us
+        rollenzuweisung.put("AmongUs", guild.getRoleById("764933443137175562")); //Among Us
         rollenzuweisung.put("", guild.getRoleById("764933536671072267")); //CS-Go
         rollenzuweisung.put("", guild.getRoleById("764933376104202250")); //League of Legends
         rollenzuweisung.put("", guild.getRoleById("764933659505066005")); //Rainbow Six Siege
@@ -73,17 +73,14 @@ public class EventListener extends ListenerAdapter {
         if (event.getUser().equals(MainBot.jda.getSelfUser()))
             return;
 
-        if (event.getTextChannel().getId().equals("764936089001132072"))
-            msg(event.getReactionEmote().getEmote().getName());
-
         if (!event.getTextChannel().getId().equals("764937703691124736"))
             return;
 
         if (event.getReactionEmote().isEmoji())
-            guild.addRoleToMember(event.getMember(), rollenzuweisung.get(event.getReactionEmote().getEmoji()));
+            guild.addRoleToMember(event.getMember(), rollenzuweisung.get(event.getReactionEmote().getEmoji())).queue();
 
         if (event.getReactionEmote().isEmote())
-            guild.addRoleToMember(event.getMember(), rollenzuweisung.get(event.getReactionEmote().getEmote().getName()));
+            guild.addRoleToMember(event.getMember(), rollenzuweisung.get(event.getReactionEmote().getEmote().getName())).queue();
     }
     public void befehlAusfuehren(User user, Message message){
 
