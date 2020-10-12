@@ -74,7 +74,7 @@ public class EventListener extends ListenerAdapter {
             return;
 
         if (event.getTextChannel().getId().equals("764936089001132072"))
-            System.out.println(event.getReactionEmote().getEmoji());
+            System.out.println(event.getReactionEmote().getEmote());
 
         /*if (!event.getTextChannel().getId().equals("764937703691124736"))
             return;
