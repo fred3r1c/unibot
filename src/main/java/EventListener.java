@@ -74,12 +74,16 @@ public class EventListener extends ListenerAdapter {
             return;
 
         if (event.getTextChannel().getId().equals("764936089001132072"))
-            msg(event.getReactionEmote().getEmoji());
+            msg(event.getReactionEmote().getEmote().getName());
 
-        /*if (!event.getTextChannel().getId().equals("764937703691124736"))
+        if (!event.getTextChannel().getId().equals("764937703691124736"))
             return;
 
-        guild.addRoleToMember(event.getMember(), rollenzuweisung.get(event.getReactionEmote().getEmoji()));*/
+        if (event.getReactionEmote().isEmoji())
+            guild.addRoleToMember(event.getMember(), rollenzuweisung.get(event.getReactionEmote().getEmoji()));
+
+        if (event.getReactionEmote().isEmote())
+            guild.addRoleToMember(event.getMember(), rollenzuweisung.get(event.getReactionEmote().getEmote().getName()));
     }
     public void befehlAusfuehren(User user, Message message){
 
