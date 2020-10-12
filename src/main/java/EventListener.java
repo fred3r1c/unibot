@@ -13,7 +13,7 @@ public class EventListener extends ListenerAdapter {
     public static final String guildID = "740916429951598683";
     public static final Guild guild = MainBot.jda.getGuildById(guildID);
     public static final TextChannel botcommands = guild.getTextChannelById("753640254917050579");
-    public static final TextChannel botkonsole = guild.getTextChannelById("753640621855604908");
+    public static final TextChannel botkonsole = guild.getTextChannelById("765256872936079401");
 
     public static final HashMap<String, Role> rollenzuweisung = new HashMap<String, Role>();
 
@@ -74,7 +74,7 @@ public class EventListener extends ListenerAdapter {
             return;
 
         if (event.getTextChannel().getId().equals("764936089001132072"))
-            System.out.println(event.getReactionEmote().getEmoji());
+            msg(event.getReactionEmote().getEmoji());
 
         /*if (!event.getTextChannel().getId().equals("764937703691124736"))
             return;
