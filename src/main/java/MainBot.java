@@ -78,7 +78,8 @@ public class MainBot {
                 .getMessageById(EventListener
                         .botkonsole
                         .getLatestMessageId())
-                .addReaction("U+1F423").queue();
+                .addReaction("U+1F423")
+                .queue();
 
     }
 
