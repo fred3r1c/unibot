@@ -1,10 +1,12 @@
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.MessageBuilder;
 import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.entities.User;
 
 import java.awt.*;
 import java.io.File;
+import java.util.HashMap;
 import java.util.Random;
 
 public class Ausgaben {

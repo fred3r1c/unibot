@@ -29,7 +29,7 @@ public class MainBot {
             jda.addEventListener(new EventListener());
         } catch (LoginException | InterruptedException ignored){}
 
-        startMessageBot();
+        //startMessageBot();
         //testNachricht();
 
 
