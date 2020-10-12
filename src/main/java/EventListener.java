@@ -3,6 +3,7 @@ import net.dv8tion.jda.api.entities.*;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.events.message.priv.PrivateMessageReceivedEvent;
 import net.dv8tion.jda.api.events.message.react.MessageReactionAddEvent;
+import net.dv8tion.jda.api.events.message.react.MessageReactionRemoveEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 import java.util.HashMap;
@@ -82,6 +83,24 @@ public class EventListener extends ListenerAdapter {
         if (event.getReactionEmote().isEmote())
             guild.addRoleToMember(event.getMember(), rollenzuweisung.get(event.getReactionEmote().getEmote().getName())).queue();
     }
+
+    @Override
+    public void onMessageReactionRemove(MessageReactionRemoveEvent event){
+
+        if (event.getUser().equals(MainBot.jda.getSelfUser()))
+            return;
+
+        if (!event.getTextChannel().getId().equals("764937703691124736"))
+            return;
+
+        if (event.getReactionEmote().isEmoji())
+            guild.removeRoleFromMember(event.getMember(), rollenzuweisung.get(event.getReactionEmote().getEmoji())).queue();
+
+        if (event.getReactionEmote().isEmote())
+            guild.removeRoleFromMember(event.getMember(), rollenzuweisung.get(event.getReactionEmote().getEmote().getName())).queue();
+
+    }
+
     public void befehlAusfuehren(User user, Message message){
 
         Commands commands = Commands.eval(message.getContentRaw());
