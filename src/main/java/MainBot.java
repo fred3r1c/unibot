@@ -72,6 +72,7 @@ public class MainBot {
 
         EventListener.botkonsole.sendMessage(message).queue(m -> m.addReaction("\uD83D\uDC23"));
 
+
     }
 
     public static void testNachricht(){
