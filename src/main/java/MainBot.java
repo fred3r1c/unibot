@@ -73,7 +73,7 @@ public class MainBot {
 
         EventListener.botkonsole.sendMessage(message).queue();
 
-        EventListener.botkonsole.getHistory().getMessageById(EventListener.botkonsole.getLatestMessageId()).addReaction("\uD83D\uDC23");
+        EventListener.botkonsole.getHistory().getMessageById(EventListener.botkonsole.getLatestMessageId()).addReaction("\uD83D\uDC23").queue();
 
     }
 
