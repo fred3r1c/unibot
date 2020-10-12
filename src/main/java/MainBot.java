@@ -70,9 +70,16 @@ public class MainBot {
         Message message = messageBuilder.build();
 
 
-        Message message1 = EventListener.botkonsole.sendMessage(message).queue().;
+        EventListener.botkonsole.sendMessage(message).queue();
 
-        message1.addReaction("\uD83D\uDC23");
+    }
+
+    public static void addReactions(){
+
+        String nachrichtMathe = "";
+        String nachrichtHobbys = "";
+        String nachricchtModule = "";
+
     }
 
     public static void testNachricht(){
