@@ -70,7 +70,7 @@ public class MainBot {
         Message message = messageBuilder.build();
 
 
-        EventListener.botkonsole.sendMessage(message).queue(m -> m.addReaction("\uD83D\uDC23"));
+        EventListener.botkonsole.sendMessage(message).queue(m -> m.addReaction("\uD83D\uDC23").queue());
 
 
     }
