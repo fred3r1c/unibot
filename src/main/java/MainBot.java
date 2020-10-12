@@ -1,3 +1,4 @@
+import jdk.jfr.Event;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -72,13 +73,7 @@ public class MainBot {
 
         EventListener.botkonsole.sendMessage(message).queue();
 
-    }
-
-    public static void addReactions(){
-
-        String nachrichtMathe = "";
-        String nachrichtHobbys = "";
-        String nachricchtModule = "";
+        EventListener.botkonsole.getHistory().getMessageById(EventListener.botkonsole.getLatestMessageId()).addReaction("\uD83D\uDC23");
 
     }
 
