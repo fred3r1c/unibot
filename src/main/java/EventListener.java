@@ -29,12 +29,12 @@ public class EventListener extends ListenerAdapter {
         rollenzuweisung.put("\uD83D\uDC7B", guild.getRoleById("764954190212235275")); //Snap
         rollenzuweisung.put("\uD83E\uDD86", guild.getRoleById("764954419832815686")); //Twitter
         rollenzuweisung.put("AmongUs", guild.getRoleById("764933443137175562")); //Among Us
-        rollenzuweisung.put("", guild.getRoleById("764933536671072267")); //CS-Go
-        rollenzuweisung.put("", guild.getRoleById("764933376104202250")); //League of Legends
-        rollenzuweisung.put("", guild.getRoleById("764933659505066005")); //Rainbow Six Siege
-        rollenzuweisung.put("", guild.getRoleById("764934139190444113")); //Rocket League
-        rollenzuweisung.put("", guild.getRoleById("764933303115186177")); //Sport
-        rollenzuweisung.put("", guild.getRoleById("764933242012172341")); //Musik
+        rollenzuweisung.put("CSGO", guild.getRoleById("764933536671072267")); //CS-Go
+        rollenzuweisung.put("LoL", guild.getRoleById("764933376104202250")); //League of Legends
+        rollenzuweisung.put("R6", guild.getRoleById("764933659505066005")); //Rainbow Six Siege
+        rollenzuweisung.put("RL", guild.getRoleById("764934139190444113")); //Rocket League
+        rollenzuweisung.put("\uD83D\uDEB4", guild.getRoleById("764933303115186177")); //Sport
+        rollenzuweisung.put("\uD83C\uDFB6", guild.getRoleById("764933242012172341")); //Musik
         /*rollenzuweisung.put("", guild.getRoleById(""));
         rollenzuweisung.put("", guild.getRoleById(""));
         rollenzuweisung.put("", guild.getRoleById(""));*/
