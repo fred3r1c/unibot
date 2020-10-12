@@ -1,3 +1,5 @@
+package main.java;
+
 public enum Commands {
 
     hallo, unknown, termine, help, stundenplan, conversation;
