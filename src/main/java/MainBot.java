@@ -69,9 +69,10 @@ public class MainBot {
 
         Message message = messageBuilder.build();
 
-        message.addReaction("\uD83D\uDC23");
 
-        EventListener.botkonsole.sendMessage(message).queue();
+        Message message1 = EventListener.botkonsole.sendMessage(message).queue().;
+
+        message1.addReaction("\uD83D\uDC23");
     }
 
     public static void testNachricht(){
