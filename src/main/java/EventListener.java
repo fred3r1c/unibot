@@ -15,6 +15,7 @@ public class EventListener extends ListenerAdapter {
     public static final Guild guild = MainBot.jda.getGuildById(guildID);
     public static final TextChannel botcommands = guild.getTextChannelById("753640254917050579");
     public static final TextChannel botkonsole = guild.getTextChannelById("765256872936079401");
+    public static final TextChannel rollenverteilung = guild.getTextChannelById("764937703691124736");
 
     public static final HashMap<String, Role> rollenzuweisung = new HashMap<String, Role>();
 
@@ -35,9 +36,6 @@ public class EventListener extends ListenerAdapter {
         rollenzuweisung.put("RL", guild.getRoleById("764934139190444113")); //Rocket League
         rollenzuweisung.put("\uD83D\uDEB4", guild.getRoleById("764933303115186177")); //Sport
         rollenzuweisung.put("\uD83C\uDFB6", guild.getRoleById("764933242012172341")); //Musik
-        /*rollenzuweisung.put("", guild.getRoleById(""));
-        rollenzuweisung.put("", guild.getRoleById(""));
-        rollenzuweisung.put("", guild.getRoleById(""));*/
     }
     public void msg(String msg){
         botkonsole.sendMessage(msg).queue();
@@ -90,7 +88,7 @@ public class EventListener extends ListenerAdapter {
         if (event.getUser().equals(MainBot.jda.getSelfUser()))
             return;
 
-        if (!event.getTextChannel().getId().equals("764937703691124736"))
+        if (!event.getTextChannel().equals(rollenverteilung))
             return;
 
         if (event.getReactionEmote().isEmoji())
