@@ -36,9 +36,9 @@ public class MainBot {
         //startMessageBot();
         //rollenMatheVorkurs();
         //rollenModule();
-        rollenHobbys();
+        //rollenHobbys();
 
-        //testNachricht();
+        testNachricht();
 
 
     }
