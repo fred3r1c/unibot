@@ -34,6 +34,7 @@ public class MainBot {
         } catch (LoginException | InterruptedException ignored){}
 
         //startMessageBot();
+
         rollenMatheVorkurs();
         rollenModule();
         rollenHobbys();
