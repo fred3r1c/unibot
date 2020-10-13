@@ -166,7 +166,7 @@ public class MainBot {
     }
 
     public static void testNachricht(){
-        EventListener.botkonsole.sendMessage("<:AmongUs:765248376051728434>").queue(message -> message.addReaction(EventListener.guild.getEmoteById("AmongUs")));
+        EventListener.botkonsole.sendMessage("<:AmongUs:765248376051728434>").queue(message -> message.addReaction(EventListener.guild.getEmotesByName("AmongUs", true).get(0)).queue());
     }
 
 }
