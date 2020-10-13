@@ -34,7 +34,10 @@ public class MainBot {
         } catch (LoginException | InterruptedException ignored){}
 
         //startMessageBot();
-        rollenMatheVorkurs();
+        //rollenMatheVorkurs();
+        rollenModule();
+        rollenHobbys();
+
         //testNachricht();
 
 
@@ -77,8 +80,93 @@ public class MainBot {
 
     }
 
+    public static void rollenModule(){
+
+        EmbedBuilder embedBuilder = new EmbedBuilder();
+
+        embedBuilder.setAuthor("Rollenverteilung");
+        embedBuilder.setTitle("Uni-Module");
+        embedBuilder.addField("", "Hier kannst du die Module wähle die du belegt hast.\n\uD83D\uDCC8 für Analysis 1\n\uD83D\uDC7E für Digitaltechnik\n\uD83E\uDDEE für Lineare Algebra\n\uD83D\uDCBB für Computertechnik\n\uD83D\uDD79 für Schaltungstechnik", true);
+        embedBuilder.addBlankField(true);
+        embedBuilder.addField("", "Here you can select the modules you chose.\n\uD83D\uDCC8 for Analysis 1\n\uD83D\uDC7E for Digitaltechnik\n\uD83E\uDDEE for Lineare Algebra\n\uD83D\uDCBB for Computertechnik\n\uD83D\uDD79 for Schaltungstechnik", true);
+
+        MessageEmbed messageEmbed = embedBuilder.build();
+
+        MessageBuilder messageBuilder = new MessageBuilder(messageEmbed);
+
+        Message message = messageBuilder.build();
+
+        EventListener.rollenverteilung.sendMessage(message).queue(m -> {
+
+            m.addReaction("\uD83D\uDCC8").queue();
+            m.addReaction("\uD83D\uDC7E").queue();
+            m.addReaction("\uD83E\uDDEE").queue();
+            m.addReaction("\uD83D\uDCBB").queue();
+            m.addReaction("\uD83D\uDD79").queue();
+
+        });
+
+    }
+
+    public static void rollenHobbys(){
+
+        EmbedBuilder embedBuilder = new EmbedBuilder();
+
+        embedBuilder.setAuthor("Rollenverteilung");
+        embedBuilder.setTitle("Hobbys und Freizeit");
+        embedBuilder.addField("", "Hier kannst du Rollen wählen nach deinen Interessen und Hobbys.\n\uD83C\uDFB6 für Musik (Hier werden noch weitere Unterkategorien folgen)\n\uD83D\uDEB4 für Sport (Hier werden noch weitere Unterkategorien folgen)\n\uD83D\uDCF8 für den Instagram-Channel\n\uD83D\uDC7B für den Snap-Chat-Channel\n\uD83E\uDD86 für den Twitter-Channel", true);
+        embedBuilder.addBlankField(true);
+        embedBuilder.addField("", "Here you can choose roles based on your interests and hobbys.\n\uD83C\uDFB6 for music (we will add more specific categories in the Future)\n\uD83D\uDEB4 for sports (we will add more specific categories in the Future)\n\uD83D\uDCF8 for the Instagram-Channel\n\uD83D\uDC7B for the Snap-Chat-Channel\n\uD83E\uDD86 for the Twitter-Channel", true);
+
+        MessageEmbed messageEmbed = embedBuilder.build();
+
+        MessageBuilder messageBuilder = new MessageBuilder(messageEmbed);
+
+        Message message = messageBuilder.build();
+
+
+        EventListener.rollenverteilung.sendMessage(message).queue(m -> {
+
+            m.addReaction("\uD83C\uDFB6").queue();
+            m.addReaction("\uD83D\uDEB4").queue();
+            m.addReaction("\uD83D\uDCF8").queue();
+            m.addReaction("\uD83D\uDC7B").queue();
+            m.addReaction("\uD83E\uDD86").queue();
+
+        });
+
+    }
+
+    public static void rollenGaming(){
+
+        EmbedBuilder embedBuilder = new EmbedBuilder();
+
+        embedBuilder.setAuthor("Rollenverteilung");
+        embedBuilder.setTitle("Gaming");
+        embedBuilder.addField("","Du bist interessiert in Gaming? Dann wähle hier die Games aus die du gerne spielst und erhalte Zugriff auf die entsprechenden Channel.",false);
+        embedBuilder.addField("", "You are interested in gaming? Than choose the games you play here and get acces to the related channels.\n", false);
+
+        MessageEmbed messageEmbed = embedBuilder.build();
+
+        MessageBuilder messageBuilder = new MessageBuilder(messageEmbed);
+
+        Message message = messageBuilder.build();
+
+
+        EventListener.rollenverteilung.sendMessage(message).queue(m -> {
+
+            m.addReaction("").queue();
+            m.addReaction("").queue();
+            m.addReaction("").queue();
+            m.addReaction("").queue();
+            m.addReaction("").queue();
+
+        });
+
+    }
+
     public static void testNachricht(){
-        EventListener.guild.getTextChannelById("753640621855604908").sendMessage("https://cdn.discordapp.com/attachments/753618061092847729/761288403261587476/Fachsemester_1_Stundenplan-1.jpg").queue();
+        EventListener.botkonsole.sendMessage(":AmongUs:").queue();
     }
 
 }
