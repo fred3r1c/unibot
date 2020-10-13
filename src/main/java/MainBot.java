@@ -37,8 +37,8 @@ public class MainBot {
         //rollenMatheVorkurs();
         //rollenModule();
         //rollenHobbys();
-
-        testNachricht();
+        rollenGaming();
+        //testNachricht();
 
 
     }
@@ -155,11 +155,11 @@ public class MainBot {
 
         EventListener.rollenverteilung.sendMessage(message).queue(m -> {
 
-            m.addReaction("").queue();
-            m.addReaction("").queue();
-            m.addReaction("").queue();
-            m.addReaction("").queue();
-            m.addReaction("").queue();
+            m.addReaction(EventListener.guild.getEmotesByName("AmongUs", true).get(0)).queue();
+            m.addReaction(EventListener.guild.getEmotesByName("LoL", true).get(0)).queue();
+            m.addReaction(EventListener.guild.getEmotesByName("CSGO", true).get(0)).queue();
+            m.addReaction(EventListener.guild.getEmotesByName("R6", true).get(0)).queue();
+            m.addReaction(EventListener.guild.getEmotesByName("RL", true).get(0)).queue();
 
         });
 
