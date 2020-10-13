@@ -35,8 +35,8 @@ public class MainBot {
 
         //startMessageBot();
         //rollenMatheVorkurs();
-        rollenModule();
-        rollenHobbys();
+        //rollenModule();
+        //rollenHobbys();
 
         testNachricht();
 
@@ -166,7 +166,7 @@ public class MainBot {
     }
 
     public static void testNachricht(){
-        EventListener.botkonsole.sendMessage(":AmongUs:").queue();
+        EventListener.botkonsole.sendMessage("<:AmongUs:765248376051728434>").queue();
     }
 
 }
