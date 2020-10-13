@@ -38,7 +38,7 @@ public class MainBot {
         rollenModule();
         rollenHobbys();
 
-        //testNachricht();
+        testNachricht();
 
 
     }
