@@ -1,6 +1,5 @@
 package main.java;
 
-import jdk.jfr.Event;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -41,7 +40,7 @@ public class MainBot {
         //rollenHobbys();
         //rollenGaming();
         rollenUebersichtsZuweisung();
-        
+
         //testNachricht();
 
 
