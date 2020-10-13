@@ -88,7 +88,7 @@ public class MainBot {
         embedBuilder.setTitle("Uni-Module");
         embedBuilder.addField("", "Hier kannst du die Module wählen die du belegt hast.\n\uD83D\uDCC8 für Analysis 1\n\uD83D\uDC7E für Digitaltechnik\n\uD83E\uDDEE für Lineare Algebra\n\uD83D\uDCBB für Computertechnik\n\uD83D\uDD79 für Schaltungstechnik", true);
         embedBuilder.addBlankField(true);
-        embedBuilder.addField("", "Here you can select the modules you chose.\n\uD83D\uDCC8 for Analysis 1\n\uD83D\uDC7E for Digitaltechnik\n\uD83E\uDDEE for Lineare Algebra\n\uD83D\uDCBB for Computertechnik\n\uD83D\uDD79 for Schaltungstechnik", true);
+        embedBuilder.addField("", "Here you can select the modules which you are currently attending.\n\uD83D\uDCC8 for Analysis 1\n\uD83D\uDC7E for Digitaltechnik\n\uD83E\uDDEE for Lineare Algebra\n\uD83D\uDCBB for Computertechnik\n\uD83D\uDD79 for Schaltungstechnik", true);
 
         MessageEmbed messageEmbed = embedBuilder.build();
 
@@ -143,8 +143,8 @@ public class MainBot {
 
         embedBuilder.setAuthor("Rollenverteilung");
         embedBuilder.setTitle("Gaming");
-        embedBuilder.addField("","Du bist interessiert in Gaming? Dann wähle hier die Games aus die du gerne spielst und erhalte Zugriff auf die entsprechenden Channel.\n<:AmongUs:765248376051728434> für Among Us\n<:LoL:765267533401686026> für League of Legends\n<:CSGO:765268874413080596> für CS-GO\n<:R6:765269090867609600> für Rainbow Six Siege\n<:RL:765269337212190720> für Rocket League\nDein Game ist nicht dabei? Dann schreibe einen der <@&753639586110111755> an.",false);
-        embedBuilder.addField("", "You are interested in gaming? Than choose the games you play here and get acces to the related channels.\n<:AmongUs:765248376051728434> for Among Us\n<:LoL:765267533401686026> for League of Legends\n<:CSGO:765268874413080596> for CS-GO\n<:R6:765269090867609600> for Rainbow Six Siege\n<:RL:765269337212190720> for Rocket League\nYour game is not included? Then write to of the <@&753639586110111755>.", false);
+        embedBuilder.addField("","Du bist interessiert an Gaming? Dann wähle hier die Games aus die du gerne spielst und erhalte Zugriff auf die entsprechenden Channel.\n<:AmongUs:765248376051728434> für Among Us\n<:LoL:765267533401686026> für League of Legends\n<:CSGO:765268874413080596> für CS-GO\n<:R6:765269090867609600> für Rainbow Six Siege\n<:RL:765269337212190720> für Rocket League\nDein Game ist nicht dabei? Dann schreibe einen der <@&753639586110111755> an.",false);
+        embedBuilder.addField("", "You are interested in gaming? Then choose the games you play here and get access to the related channels.\n<:AmongUs:765248376051728434> for Among Us\n<:LoL:765267533401686026> for League of Legends\n<:CSGO:765268874413080596> for CS-GO\n<:R6:765269090867609600> for Rainbow Six Siege\n<:RL:765269337212190720> for Rocket League\nYour game is not included? Then write to one of the <@&753639586110111755>.", false);
 
         MessageEmbed messageEmbed = embedBuilder.build();
 
