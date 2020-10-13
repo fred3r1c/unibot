@@ -2,6 +2,7 @@ package main.java;
 
 import net.dv8tion.jda.api.MessageBuilder;
 import net.dv8tion.jda.api.entities.*;
+import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.events.message.priv.PrivateMessageReceivedEvent;
 import net.dv8tion.jda.api.events.message.react.MessageReactionAddEvent;
@@ -101,6 +102,16 @@ public class EventListener extends ListenerAdapter {
 
     }
 
+    @Override
+    public void onGuildMemberJoin(GuildMemberJoinEvent event){
+
+        EventListener.guild.addRoleToMember(event.getMember(), EventListener.guild.getRoleById("765603281799348277")).queue();
+        EventListener.guild.addRoleToMember(event.getMember(), EventListener.guild.getRoleById("765603618635513917")).queue();
+        EventListener.guild.addRoleToMember(event.getMember(), EventListener.guild.getRoleById("765603644422094869")).queue();
+        EventListener.guild.addRoleToMember(event.getMember(), EventListener.guild.getRoleById("765603791885828126")).queue();
+
+    }
+
     public void befehlAusfuehren(User user, Message message){
 
         Commands commands = Commands.eval(message.getContentRaw());
@@ -109,7 +120,7 @@ public class EventListener extends ListenerAdapter {
         switch (commands){
 
             case hallo:
-                messageBuilder.setContent("Hallo, ich bin ein Bot und kann noch nix :)");
+                messageBuilder.setContent("Hallo, ich bin ein Bot und kann mitlerweile schon einiges :)");
                 break;
 
             case termine:

@@ -1,5 +1,6 @@
 package main.java;
 
+import jdk.jfr.Event;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -35,10 +36,12 @@ public class MainBot {
 
         //startMessageBot();
 
-        rollenMatheVorkurs();
-        rollenModule();
-        rollenHobbys();
-        rollenGaming();
+        //rollenMatheVorkurs();
+        //rollenModule();
+        //rollenHobbys();
+        //rollenGaming();
+        rollenUebersichtsZuweisung();
+        
         //testNachricht();
 
 
@@ -161,6 +164,19 @@ public class MainBot {
             m.addReaction(EventListener.guild.getEmotesByName("CSGO", true).get(0)).queue();
             m.addReaction(EventListener.guild.getEmotesByName("R6", true).get(0)).queue();
             m.addReaction(EventListener.guild.getEmotesByName("RL", true).get(0)).queue();
+
+        });
+
+    }
+
+    public static void rollenUebersichtsZuweisung(){
+
+        EventListener.guild.getMembers().stream().forEach(member -> {
+
+            EventListener.guild.addRoleToMember(member, EventListener.guild.getRoleById("765603281799348277")).queue();
+            EventListener.guild.addRoleToMember(member, EventListener.guild.getRoleById("765603618635513917")).queue();
+            EventListener.guild.addRoleToMember(member, EventListener.guild.getRoleById("765603644422094869")).queue();
+            EventListener.guild.addRoleToMember(member, EventListener.guild.getRoleById("765603791885828126")).queue();
 
         });
 
