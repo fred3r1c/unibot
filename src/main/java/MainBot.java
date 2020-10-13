@@ -66,7 +66,7 @@ public class MainBot {
         embedBuilder.setAuthor("Rollenverteilung");
         embedBuilder.setTitle("Mathe-Vorkurs", "https://www.moodle.tum.de/course/view.php?id=58860");
         embedBuilder.addField("", "Du bist für den Mathe-Vorkurs angemeldet?\nDann reagiere jetzt mit dem \uD83D\uDC23 Emoji auf diese Nachricht und du bekommst automatisch Zugriff auf alles, das mit dem Mathe-Vorkurs zusammenhängt.", false);
-        embedBuilder.addField("", "You are registered for the Math-Course?\nThan react with a \uD83D\uDC23 emoji on this message and you will get acces to all the Math-Course related stuff.", false);
+        embedBuilder.addField("", "You are registered for the Math-Course?\nThen react with a \uD83D\uDC23 emoji on this message and you will get acces to all the Math-Course related stuff.", false);
 
         MessageEmbed messageEmbed = embedBuilder.build();
 
