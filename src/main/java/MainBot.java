@@ -36,7 +36,7 @@ public class MainBot {
         //startMessageBot();
         //rollenMatheVorkurs();
         //rollenModule();
-        //rollenHobbys();
+        rollenHobbys();
 
         testNachricht();
 
@@ -114,9 +114,9 @@ public class MainBot {
 
         embedBuilder.setAuthor("Rollenverteilung");
         embedBuilder.setTitle("Hobbys und Freizeit");
-        embedBuilder.addField("", "Hier kannst du Rollen wählen nach deinen Interessen und Hobbys.\n\uD83C\uDFB6 für Musik (Hier werden noch weitere Unterkategorien folgen)\n\uD83D\uDEB4 für Sport (Hier werden noch weitere Unterkategorien folgen)\n\uD83D\uDCF8 für den Instagram-Channel\n\uD83D\uDC7B für den Snap-Chat-Channel\n\uD83E\uDD86 für den Twitter-Channel", true);
+        embedBuilder.addField("", "Hier kannst du Rollen wählen nach deinen Interessen und Hobbys.\n\uD83C\uDFB6 für Musik\n\uD83D\uDEB4 für Sport\n\uD83D\uDCF8 für den Instagram-Channel\n\uD83D\uDC7B für den Snap-Chat-Channel\n\uD83E\uDD86 für den Twitter-Channel", true);
         embedBuilder.addBlankField(true);
-        embedBuilder.addField("", "Here you can choose roles based on your interests and hobbys.\n\uD83C\uDFB6 for music (we will add more specific categories in the Future)\n\uD83D\uDEB4 for sports (we will add more specific categories in the Future)\n\uD83D\uDCF8 for the Instagram-Channel\n\uD83D\uDC7B for the Snap-Chat-Channel\n\uD83E\uDD86 for the Twitter-Channel", true);
+        embedBuilder.addField("", "Here you can choose roles based on your interests and hobbys.\n\uD83C\uDFB6 for music\n\uD83D\uDEB4 for sports\n\uD83D\uDCF8 for the Instagram-Channel\n\uD83D\uDC7B for the Snap-Chat-Channel\n\uD83E\uDD86 for the Twitter-Channel", true);
 
         MessageEmbed messageEmbed = embedBuilder.build();
 
@@ -143,8 +143,8 @@ public class MainBot {
 
         embedBuilder.setAuthor("Rollenverteilung");
         embedBuilder.setTitle("Gaming");
-        embedBuilder.addField("","Du bist interessiert in Gaming? Dann wähle hier die Games aus die du gerne spielst und erhalte Zugriff auf die entsprechenden Channel.",false);
-        embedBuilder.addField("", "You are interested in gaming? Than choose the games you play here and get acces to the related channels.\n", false);
+        embedBuilder.addField("","Du bist interessiert in Gaming? Dann wähle hier die Games aus die du gerne spielst und erhalte Zugriff auf die entsprechenden Channel.\n<:AmongUs:765248376051728434> für Among Us\n<:LoL:765267533401686026> für League of Legends\n<:CSGO:765268874413080596> für CS-GO\n<:R6:765269090867609600> für Rainbow Six Siege\n<:RL:765269337212190720> für Rocket League\nDein Game ist nicht dabei? Dann schreibe eine der <@&753639586110111755> an.",false);
+        embedBuilder.addField("", "You are interested in gaming? Than choose the games you play here and get acces to the related channels.\n<:AmongUs:765248376051728434> for Among Us\n<:LoL:765267533401686026> for League of Legends\n<:CSGO:765268874413080596> for CS-GO\n<:R6:765269090867609600> for Rainbow Six Siege\n<:RL:765269337212190720> for Rocket League\nYour game is not included? Than write to of the <@&753639586110111755>.", false);
 
         MessageEmbed messageEmbed = embedBuilder.build();
 
@@ -166,7 +166,7 @@ public class MainBot {
     }
 
     public static void testNachricht(){
-        EventListener.botkonsole.sendMessage("<:AmongUs:765248376051728434>").queue();
+        EventListener.botkonsole.sendMessage("<:AmongUs:765248376051728434>").queue(message -> message.addReaction(EventListener.guild.getEmoteById("AmongUs")));
     }
 
 }
