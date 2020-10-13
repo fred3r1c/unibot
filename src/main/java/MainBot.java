@@ -34,9 +34,9 @@ public class MainBot {
         } catch (LoginException | InterruptedException ignored){}
 
         //startMessageBot();
-        //rollenMatheVorkurs();
-        //rollenModule();
-        //rollenHobbys();
+        rollenMatheVorkurs();
+        rollenModule();
+        rollenHobbys();
         rollenGaming();
         //testNachricht();
 
@@ -86,7 +86,7 @@ public class MainBot {
 
         embedBuilder.setAuthor("Rollenverteilung");
         embedBuilder.setTitle("Uni-Module");
-        embedBuilder.addField("", "Hier kannst du die Module wähle die du belegt hast.\n\uD83D\uDCC8 für Analysis 1\n\uD83D\uDC7E für Digitaltechnik\n\uD83E\uDDEE für Lineare Algebra\n\uD83D\uDCBB für Computertechnik\n\uD83D\uDD79 für Schaltungstechnik", true);
+        embedBuilder.addField("", "Hier kannst du die Module wählen die du belegt hast.\n\uD83D\uDCC8 für Analysis 1\n\uD83D\uDC7E für Digitaltechnik\n\uD83E\uDDEE für Lineare Algebra\n\uD83D\uDCBB für Computertechnik\n\uD83D\uDD79 für Schaltungstechnik", true);
         embedBuilder.addBlankField(true);
         embedBuilder.addField("", "Here you can select the modules you chose.\n\uD83D\uDCC8 for Analysis 1\n\uD83D\uDC7E for Digitaltechnik\n\uD83E\uDDEE for Lineare Algebra\n\uD83D\uDCBB for Computertechnik\n\uD83D\uDD79 for Schaltungstechnik", true);
 
@@ -114,7 +114,7 @@ public class MainBot {
 
         embedBuilder.setAuthor("Rollenverteilung");
         embedBuilder.setTitle("Hobbys und Freizeit");
-        embedBuilder.addField("", "Hier kannst du Rollen wählen nach deinen Interessen und Hobbys.\n\uD83C\uDFB6 für Musik\n\uD83D\uDEB4 für Sport\n\uD83D\uDCF8 für den Instagram-Channel\n\uD83D\uDC7B für den Snap-Chat-Channel\n\uD83E\uDD86 für den Twitter-Channel", true);
+        embedBuilder.addField("", "Hier kannst du Rollen je nach deinen Interessen und Hobbys wählen.\n\uD83C\uDFB6 für Musik\n\uD83D\uDEB4 für Sport\n\uD83D\uDCF8 für den Instagram-Channel\n\uD83D\uDC7B für den Snap-Chat-Channel\n\uD83E\uDD86 für den Twitter-Channel", true);
         embedBuilder.addBlankField(true);
         embedBuilder.addField("", "Here you can choose roles based on your interests and hobbys.\n\uD83C\uDFB6 for music\n\uD83D\uDEB4 for sports\n\uD83D\uDCF8 for the Instagram-Channel\n\uD83D\uDC7B for the Snap-Chat-Channel\n\uD83E\uDD86 for the Twitter-Channel", true);
 
@@ -143,8 +143,8 @@ public class MainBot {
 
         embedBuilder.setAuthor("Rollenverteilung");
         embedBuilder.setTitle("Gaming");
-        embedBuilder.addField("","Du bist interessiert in Gaming? Dann wähle hier die Games aus die du gerne spielst und erhalte Zugriff auf die entsprechenden Channel.\n<:AmongUs:765248376051728434> für Among Us\n<:LoL:765267533401686026> für League of Legends\n<:CSGO:765268874413080596> für CS-GO\n<:R6:765269090867609600> für Rainbow Six Siege\n<:RL:765269337212190720> für Rocket League\nDein Game ist nicht dabei? Dann schreibe eine der <@&753639586110111755> an.",false);
-        embedBuilder.addField("", "You are interested in gaming? Than choose the games you play here and get acces to the related channels.\n<:AmongUs:765248376051728434> for Among Us\n<:LoL:765267533401686026> for League of Legends\n<:CSGO:765268874413080596> for CS-GO\n<:R6:765269090867609600> for Rainbow Six Siege\n<:RL:765269337212190720> for Rocket League\nYour game is not included? Than write to of the <@&753639586110111755>.", false);
+        embedBuilder.addField("","Du bist interessiert in Gaming? Dann wähle hier die Games aus die du gerne spielst und erhalte Zugriff auf die entsprechenden Channel.\n<:AmongUs:765248376051728434> für Among Us\n<:LoL:765267533401686026> für League of Legends\n<:CSGO:765268874413080596> für CS-GO\n<:R6:765269090867609600> für Rainbow Six Siege\n<:RL:765269337212190720> für Rocket League\nDein Game ist nicht dabei? Dann schreibe einen der <@&753639586110111755> an.",false);
+        embedBuilder.addField("", "You are interested in gaming? Than choose the games you play here and get acces to the related channels.\n<:AmongUs:765248376051728434> for Among Us\n<:LoL:765267533401686026> for League of Legends\n<:CSGO:765268874413080596> for CS-GO\n<:R6:765269090867609600> for Rainbow Six Siege\n<:RL:765269337212190720> for Rocket League\nYour game is not included? Then write to of the <@&753639586110111755>.", false);
 
         MessageEmbed messageEmbed = embedBuilder.build();
 
