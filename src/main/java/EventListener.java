@@ -132,16 +132,13 @@ public class EventListener extends ListenerAdapter {
                 return;
 
             case unknown:
-                messageBuilder.setContent("Unbekannter Befehl, sryyyyy OwO");
+                //messageBuilder.setContent("Unbekannter Befehl, sryyyyy OwO");
                 break;
 
             case stundenplan:
                 Ausgaben.stundenplan(user);
                 return;
 
-            case conversation:
-                Ausgaben.conversation(user);
-                return;
         }
 
          user.openPrivateChannel().queue(channel -> channel.sendMessage(messageBuilder.build()).queue());;
