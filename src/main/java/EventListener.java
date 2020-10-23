@@ -20,26 +20,7 @@ public class EventListener extends ListenerAdapter {
     public static final TextChannel botkonsole = guild.getTextChannelById("765256872936079401");
     public static final TextChannel rollenverteilung = guild.getTextChannelById("764937703691124736");
 
-    public static final HashMap<String, Role> rollenzuweisung = new HashMap<String, Role>();
 
-    static {
-        rollenzuweisung.put("\uD83D\uDCC8", guild.getRoleById("764937834863001610")); //Analysis 1
-        rollenzuweisung.put("\uD83D\uDC7E", guild.getRoleById("764938020688101426")); //Digitaltechnik
-        rollenzuweisung.put("\uD83E\uDDEE", guild.getRoleById("764938234253672478")); //Lineare Algebra
-        rollenzuweisung.put("\uD83D\uDCBB", guild.getRoleById("764938237109075988")); //Computertechnik
-        rollenzuweisung.put("\uD83D\uDD79", guild.getRoleById("764938239558942740")); //Schaltungtheorie
-        rollenzuweisung.put("\uD83D\uDC23", guild.getRoleById("764938487434051604")); //Mathe-Vorkurs
-        rollenzuweisung.put("\uD83D\uDCF8", guild.getRoleById("764954188706611210")); //Insta
-        rollenzuweisung.put("\uD83D\uDC7B", guild.getRoleById("764954190212235275")); //Snap
-        rollenzuweisung.put("\uD83E\uDD86", guild.getRoleById("764954419832815686")); //Twitter
-        rollenzuweisung.put("AmongUs", guild.getRoleById("764933443137175562")); //Among Us
-        rollenzuweisung.put("CSGO", guild.getRoleById("764933536671072267")); //CS-Go
-        rollenzuweisung.put("LoL", guild.getRoleById("764933376104202250")); //League of Legends
-        rollenzuweisung.put("R6", guild.getRoleById("764933659505066005")); //Rainbow Six Siege
-        rollenzuweisung.put("RL", guild.getRoleById("764934139190444113")); //Rocket League
-        rollenzuweisung.put("\uD83D\uDEB4", guild.getRoleById("764933303115186177")); //Sport
-        rollenzuweisung.put("\uD83C\uDFB6", guild.getRoleById("764933242012172341")); //Musik
-    }
     public void msg(String msg){
         botkonsole.sendMessage(msg).queue();
     }
@@ -75,14 +56,11 @@ public class EventListener extends ListenerAdapter {
         if (event.getUser().equals(MainBot.jda.getSelfUser()))
             return;
 
-        if (!event.getTextChannel().getId().equals("764937703691124736"))
-            return;
+        if (event.getTextChannel().getId().equals("764935334366019594"))
+            Rollen.regelnadd(event);
 
-        if (event.getReactionEmote().isEmoji())
-            guild.addRoleToMember(event.getMember(), rollenzuweisung.get(event.getReactionEmote().getEmoji())).queue();
-
-        if (event.getReactionEmote().isEmote())
-            guild.addRoleToMember(event.getMember(), rollenzuweisung.get(event.getReactionEmote().getEmote().getName())).queue();
+        if (event.getTextChannel().getId().equals("764937703691124736"))
+            Rollen.rollenVerteilungadd(event);
     }
 
     @Override
@@ -91,14 +69,11 @@ public class EventListener extends ListenerAdapter {
         if (event.getUser().equals(MainBot.jda.getSelfUser()))
             return;
 
-        if (!event.getTextChannel().equals(rollenverteilung))
-            return;
+        if (event.getTextChannel().getId().equals("764935334366019594"))
+            Rollen.regelnrem(event);
 
-        if (event.getReactionEmote().isEmoji())
-            guild.removeRoleFromMember(event.getMember(), rollenzuweisung.get(event.getReactionEmote().getEmoji())).queue();
-
-        if (event.getReactionEmote().isEmote())
-            guild.removeRoleFromMember(event.getMember(), rollenzuweisung.get(event.getReactionEmote().getEmote().getName())).queue();
+        if (event.getTextChannel().getId().equals("764937703691124736"))
+            Rollen.rollenVerteilungrem(event);
 
     }
 
