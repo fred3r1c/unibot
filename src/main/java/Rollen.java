@@ -66,6 +66,7 @@ public class Rollen {
         if (event.getReactionEmote().isEmote())
             guild.removeRoleFromMember(event.getMember(), rollenzuweisung.get(event.getReactionEmote().getEmote().getName())).queue();
 
+
     }
 
 }
