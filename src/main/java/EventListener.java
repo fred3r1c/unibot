@@ -9,8 +9,6 @@ import net.dv8tion.jda.api.events.message.react.MessageReactionAddEvent;
 import net.dv8tion.jda.api.events.message.react.MessageReactionRemoveEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
-import java.util.HashMap;
-
 
 public class EventListener extends ListenerAdapter {
 
@@ -108,7 +106,7 @@ public class EventListener extends ListenerAdapter {
 
             case unknown:
                 //messageBuilder.setContent("Unbekannter Befehl, sryyyyy OwO");
-                break;
+                return;
 
             case stundenplan:
                 Ausgaben.stundenplan(user);
