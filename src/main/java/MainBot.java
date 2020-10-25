@@ -26,7 +26,7 @@ public class MainBot {
         try{
             JDABuilder builder = JDABuilder.createDefault(BOT_TOKEN);
             builder.enableIntents(GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_VOICE_STATES, GatewayIntent.GUILD_EMOJIS, GatewayIntent.DIRECT_MESSAGES, GatewayIntent.GUILD_PRESENCES, GatewayIntent.GUILD_MESSAGES, GatewayIntent.GUILD_MESSAGE_REACTIONS);
-            builder.setActivity(Activity.playing("Testing new Role-System"));
+            builder.setActivity(Activity.playing("Discord 2.0!"));
             builder.setChunkingFilter(ChunkingFilter.ALL);
             builder.setMemberCachePolicy(MemberCachePolicy.ALL);
             jda = builder.build();
@@ -352,7 +352,7 @@ public class MainBot {
 
         EventListener.guild.getMembers().stream().forEach(member -> {
 
-            if (!member.getUser().equals(jda.getSelfUser())) {
+            if (!member.getUser().isBot()) {
                 member.getRoles().stream().forEach(role -> {
 
                     if (!arrayList.contains(role.getId()))
@@ -362,7 +362,7 @@ public class MainBot {
 
                 EventListener.guild.addRoleToMember(member, EventListener.guild.getRoleById("769931144221163550")).queue();     //just joined
 
-                embedBuilder.setDescription("Hallo " + member.getEffectiveName() + "," +
+                embedBuilder.setDescription("Hallo lieber Studierender," +
                         "\n\nWillkommen auf dem EIT-Server 2.0!" +
                         "\nIn Kürze wirst du im Regeln-Channel und im Willkommen-Channel jeweils eine Nachricht vom Bot sehen, die dich durch die ersten Schritte auf unserem neuen Server führen werden." +
                         "\nAkzeptiere dann einfach die Regeln und wähle dein Semester aus und dann wird bald alles wieder wie gewohnt sein, nur besser!" +
