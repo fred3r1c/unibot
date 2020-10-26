@@ -345,10 +345,11 @@ public class MainBot {
         arrayList.add("766332083575980095");        //TeXit
         arrayList.add("766632020444446730");        //Rythm
         arrayList.add("767033183924518973");        //content Bot
+        arrayList.add("769931144221163550");        //JJ
 
-        EmbedBuilder embedBuilder = new EmbedBuilder();
+        //EmbedBuilder embedBuilder = new EmbedBuilder();
 
-        embedBuilder.setAuthor("Uni-Bot_EIT");
+        //embedBuilder.setAuthor("Uni-Bot_EIT");
 
         EventListener.guild.getMembers().stream().forEach(member -> {
 
@@ -362,18 +363,18 @@ public class MainBot {
 
                 EventListener.guild.addRoleToMember(member, EventListener.guild.getRoleById("769931144221163550")).queue();     //just joined
 
-                embedBuilder.setDescription("Hallo lieber Studierender," +
-                        "\n\nWillkommen auf dem EIT-Server 2.0!" +
-                        "\nIn Kürze wirst du im Regeln-Channel und im Willkommen-Channel jeweils eine Nachricht vom Bot sehen, die dich durch die ersten Schritte auf unserem neuen Server führen werden." +
-                        "\nAkzeptiere dann einfach die Regeln und wähle dein Semester aus und dann wird bald alles wieder wie gewohnt sein, nur besser!" +
-                        "\n\nIm Rahmen der Umstrukturierung wurden dir **__alle Rollen weggenommen__**, aber keine Sorge:" +
-                        "\n1. Deine Module werden dir automatisch mit deiner Semester-Wahl gegeben (zusätzliche Module findest du im Modul-Gruppen-Channel." +
-                        "\n2. Alle Gruppen bzgl. Hobbys, Freizeit und Gaming kannst du dir wie gewohnt nun über den Social-Gruppen-Channel geben." +
-                        "\n\n Bei Fragen melde dich bei einem der Maintainer und wir werden dir gerne versuchen weiterzuhelfen." +
-                        "\n\n Viel Spaß in deinem Studium wünscht dir" +
-                        "\n Dein Uni-Bot_EIT");
+                //embedBuilder.setDescription("Hallo lieber Studierender," +
+                //        "\n\nWillkommen auf dem EIT-Server 2.0!" +
+                //        "\nIn Kürze wirst du im Regeln-Channel und im Willkommen-Channel jeweils eine Nachricht vom Bot sehen, die dich durch die ersten Schritte auf unserem neuen Server führen werden." +
+                //        "\nAkzeptiere dann einfach die Regeln und wähle dein Semester aus und dann wird bald alles wieder wie gewohnt sein, nur besser!" +
+                //        "\n\nIm Rahmen der Umstrukturierung wurden dir **__alle Rollen weggenommen__**, aber keine Sorge:" +
+                //        "\n1. Deine Module werden dir automatisch mit deiner Semester-Wahl gegeben (zusätzliche Module findest du im Modul-Gruppen-Channel." +
+                //        "\n2. Alle Gruppen bzgl. Hobbys, Freizeit und Gaming kannst du dir wie gewohnt nun über den Social-Gruppen-Channel geben." +
+                //        "\n\n Bei Fragen melde dich bei einem der Maintainer und wir werden dir gerne versuchen weiterzuhelfen." +
+                //        "\n\n Viel Spaß in deinem Studium wünscht dir" +
+                //        "\n Dein Uni-Bot_EIT");
 
-                member.getUser().openPrivateChannel().queue(privateChannel -> privateChannel.sendMessage(embedBuilder.build()).queue());
+                //member.getUser().openPrivateChannel().queue(privateChannel -> privateChannel.sendMessage(embedBuilder.build()).queue());
             }
 
         });
