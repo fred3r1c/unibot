@@ -17,11 +17,13 @@ public class Ausgaben {
 
     public static void stundenplan (User user){
 
-        File filePNG = new File("//var//lib//jenkins//workspace//MoritzUnibot//src//main//resources//Files//Fachsemester_1_Stundenplan.PNG");
-        File filepdf = new File("//var//lib//jenkins//workspace//MoritzUnibot//src//main//resources//Files//Fachsemester_1_Stundenplan.pdf");
-
-        user.openPrivateChannel().queue(channel -> channel.sendFile(filePNG, filePNG.getName()).queue());
-        user.openPrivateChannel().queue(channel -> channel.sendFile(filepdf, filepdf.getName()).queue());
+        //File filePNG = new File("//var//lib//jenkins//workspace//MoritzUnibot//src//main//resources//Files//Fachsemester_1_Stundenplan.PNG");
+        //File filepdf = new File("//var//lib//jenkins//workspace//MoritzUnibot//src//main//resources//Files//Fachsemester_1_Stundenplan.pdf");
+        //
+        //user.openPrivateChannel().queue(channel -> channel.sendFile(filePNG, filePNG.getName()).queue());
+        //user.openPrivateChannel().queue(channel -> channel.sendFile(filepdf, filepdf.getName()).queue());
+        user.openPrivateChannel().queue(privateChannel -> privateChannel.sendMessage("Die Stundenplan-Funkion ist aktuell noch in Bearbeitung um den neuen Ansprüchen gerecht zu werden." +
+                "\nVielen Dank für dein Verständnis"));
 
     }
 

@@ -45,8 +45,8 @@ public class MainBot {
         //rollenHobbys();           //rdytogo
         //rollenGaming();           //rdytogo
         //startMessageBot();        //rdytogo
-        //stadtteile();             //rdytogo
-        rollenUebersichtsZuweisung();
+        stadtteile();             //rdytogo
+        //rollenUebersichtsZuweisung();
 
         //testNachricht();
 
