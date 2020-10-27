@@ -23,7 +23,7 @@ public class Ausgaben {
         //user.openPrivateChannel().queue(channel -> channel.sendFile(filePNG, filePNG.getName()).queue());
         //user.openPrivateChannel().queue(channel -> channel.sendFile(filepdf, filepdf.getName()).queue());
         user.openPrivateChannel().queue(privateChannel -> privateChannel.sendMessage("Die Stundenplan-Funkion ist aktuell noch in Bearbeitung um den neuen Ansprüchen gerecht zu werden." +
-                "\nVielen Dank für dein Verständnis"));
+                "\nVielen Dank für dein Verständnis").queue());
 
     }
 
