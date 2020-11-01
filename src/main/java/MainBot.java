@@ -26,7 +26,7 @@ public class MainBot {
         try{
             JDABuilder builder = JDABuilder.createDefault(BOT_TOKEN);
             builder.enableIntents(GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_VOICE_STATES, GatewayIntent.GUILD_EMOJIS, GatewayIntent.DIRECT_MESSAGES, GatewayIntent.GUILD_PRESENCES, GatewayIntent.GUILD_MESSAGES, GatewayIntent.GUILD_MESSAGE_REACTIONS);
-            builder.setActivity(Activity.playing("Discord 2.0!"));
+            builder.setActivity(Activity.playing("Testing Events"));
             builder.setChunkingFilter(ChunkingFilter.ALL);
             builder.setMemberCachePolicy(MemberCachePolicy.ALL);
             jda = builder.build();
@@ -47,6 +47,7 @@ public class MainBot {
         //startMessageBot();        //rdytogo
         //stadtteile();             //rdytogo
         //rollenUebersichtsZuweisung();
+        //rollenevents();
 
         //testNachricht();
 
@@ -404,21 +405,60 @@ public class MainBot {
 
         EventListener.social.sendMessage(embedBuilder.build()).queue(message -> {
 
-            message.addReaction("\n\uD83C\uDF53").queue();
-            message.addReaction("\n\uD83C\uDF5D").queue();
-            message.addReaction("\n\uD83E\uDD5E").queue();
-            message.addReaction("\n\uD83C\uDF6B").queue();
-            message.addReaction("\n\uD83C\uDF4F").queue();
-            message.addReaction("\n\uD83E\uDD51").queue();
-            message.addReaction("\n\uD83E\uDD5D").queue();
-            message.addReaction("\n\uD83E\uDDCA").queue();
-            message.addReaction("\n\uD83E\uDD67").queue();
-            message.addReaction("\n\uD83E\uDD68").queue();
-            message.addReaction("\n\uD83C\uDF7A").queue();
-            message.addReaction("\n\uD83C\uDF55").queue();
-            message.addReaction("\n\uD83C\uDF49").queue();
+            message.addReaction("\uD83C\uDF53").queue();
+            message.addReaction("\uD83C\uDF5D").queue();
+            message.addReaction("\uD83E\uDD5E").queue();
+            message.addReaction("\uD83C\uDF6B").queue();
+            message.addReaction("\uD83C\uDF4F").queue();
+            message.addReaction("\uD83E\uDD51").queue();
+            message.addReaction("\uD83E\uDD5D").queue();
+            message.addReaction("\uD83E\uDDCA").queue();
+            message.addReaction("\uD83E\uDD67").queue();
+            message.addReaction("\uD83E\uDD68").queue();
+            message.addReaction("\uD83C\uDF7A").queue();
+            message.addReaction("\uD83C\uDF55").queue();
+            message.addReaction("\uD83C\uDF49").queue();
 
         });
+
+
+    }
+
+    public static void rollenevents (){
+
+        EmbedBuilder embedBuilder = new EmbedBuilder();
+
+        embedBuilder.setAuthor("Gaming-Night");
+        embedBuilder.setTitle("Gruppen");
+        embedBuilder.setDescription("Willkommen bei unserem ersten online-Event!" +
+                "\n\n Im folgenden kommst du mit \uD83C\uDFB2 in eine Zufällige Gruppe oder du wählst eine bestimme Gruppe aus mit den Emojis 🇦 bis 🇹");
+
+        EventListener.events.sendMessage(embedBuilder.build()).queue(message -> {
+
+            //message.addReaction("\uD83C\uDFB2").queue();
+            message.addReaction("🇦").queue();
+            message.addReaction("🇧").queue();
+            message.addReaction("🇨").queue();
+            message.addReaction("🇩").queue();
+            message.addReaction("🇪").queue();
+            message.addReaction("🇫").queue();
+            message.addReaction("🇬").queue();
+            message.addReaction("🇭").queue();
+            message.addReaction("🇮").queue();
+            message.addReaction("🇯").queue();
+            message.addReaction("🇰").queue();
+            message.addReaction("🇱").queue();
+            message.addReaction("🇲").queue();
+            message.addReaction("🇳").queue();
+            message.addReaction("🇴").queue();
+            message.addReaction("🇵").queue();
+            message.addReaction("🇶").queue();
+            message.addReaction("🇷").queue();
+            message.addReaction("🇸").queue();
+            message.addReaction("🇹").queue();
+
+        });
+
 
 
     }

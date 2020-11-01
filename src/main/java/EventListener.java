@@ -20,6 +20,8 @@ public class EventListener extends ListenerAdapter {
     public static final TextChannel botkonsole = guild.getTextChannelById("765256872936079401");
     public static final TextChannel module = guild.getTextChannelById("764937703691124736");
     public static final TextChannel social = guild.getTextChannelById("769920466994855946");
+    public static final TextChannel events = guild.getTextChannelById("764946848833339442");
+
 
 
     public void msg(String msg){
@@ -69,6 +71,10 @@ public class EventListener extends ListenerAdapter {
         else if (event.getTextChannel().getId().equals("769920466994855946"))           //social-rollen
             Rollen.socialadd(event);
 
+        else if (event.getTextChannel().getId().equals("764946848833339442"))           //Events
+            if (!Rollen.hasEventRole(event))
+                Rollen.eventadd(event);
+
     }
 
     @Override
@@ -88,6 +94,9 @@ public class EventListener extends ListenerAdapter {
 
         else if (event.getTextChannel().getId().equals("769920466994855946"))         //social-rollen
             Rollen.socialrem(event);
+
+        else if (event.getTextChannel().getId().equals("764946848833339442"))           //Events
+            Rollen.eventrem(event);
 
     }
 

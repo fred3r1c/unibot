@@ -2,11 +2,16 @@ package main.java;
 
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Role;
+import net.dv8tion.jda.api.events.message.guild.react.GuildMessageReactionAddEvent;
 import net.dv8tion.jda.api.events.message.react.MessageReactionAddEvent;
 import net.dv8tion.jda.api.events.message.react.MessageReactionRemoveEvent;
 
+import java.sql.Array;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Rollen {
 
@@ -14,6 +19,7 @@ public class Rollen {
 
     public static final HashMap<String, Role> module = new HashMap<String, Role>();
     public static final HashMap<String, Role> social = new HashMap<String, Role>();
+    public static final HashMap<String, Role> events = new HashMap<String, Role>();
 
     public static final String discordVideo = "";
 
@@ -87,6 +93,28 @@ public class Rollen {
         social.put("\uD83C\uDF7A", guild.getRoleById("769915992221679646"));  //Schwabing
         social.put("\uD83C\uDF55", guild.getRoleById("769915836982099988"));  //Sendling
         social.put("\uD83C\uDF49", guild.getRoleById("769916045937999892"));  //Trudering
+
+        events.put("🇦", guild.getRoleById("771852088011391016"));  //A
+        events.put("🇧", guild.getRoleById("771852280915820585"));  //B
+        events.put("🇨", guild.getRoleById("771852396866961478"));  //C
+        events.put("🇩", guild.getRoleById("771852435866124319"));  //D
+        events.put("🇪", guild.getRoleById("771852472821612584"));  //E
+        events.put("🇫", guild.getRoleById("771852514340503614"));  //F
+        events.put("🇬", guild.getRoleById("771852564563886080"));  //G
+        events.put("🇭", guild.getRoleById("771852595017809951"));  //H
+        events.put("🇮", guild.getRoleById("771852630405283871"));  //I
+        events.put("🇯", guild.getRoleById("771852668418785330"));  //J
+        events.put("🇰", guild.getRoleById("771852714136174624"));  //K
+        events.put("🇱", guild.getRoleById("771852749033701457"));  //L
+        events.put("🇲", guild.getRoleById("771852792323244102"));  //M
+        events.put("🇳", guild.getRoleById("771852826502627349"));  //N
+        events.put("🇴", guild.getRoleById("771852861323739147"));  //O
+        events.put("🇵", guild.getRoleById("771852902137724979"));  //P
+        events.put("🇶", guild.getRoleById("771852995062530048"));  //Q
+        events.put("🇷", guild.getRoleById("771853039916941373"));  //R
+        events.put("🇸", guild.getRoleById("771853076827078667"));  //S
+        events.put("🇹", guild.getRoleById("771853115681931285"));  //T
+
 
     }
 
@@ -166,6 +194,104 @@ public class Rollen {
 
         if (event.getReactionEmote().isEmote())
             guild.removeRoleFromMember(event.getMember(), social.get(event.getReactionEmote().getEmote().getName())).queue();
+
+    }
+
+    public static void eventadd(MessageReactionAddEvent event){
+
+        System.out.println(event.getReactionEmote().getEmoji());
+
+        if (event.getReactionEmote().getEmoji().equals("\uD83C\uDFB2")) {
+
+            guild.addRoleToMember(event.getMember(), roleast()).queue();
+            return;
+
+        }
+
+        if (event.getReactionEmote().isEmoji())
+            guild.addRoleToMember(event.getMember(), events.get(event.getReactionEmote().getEmoji())).queue();
+
+        if (event.getReactionEmote().isEmote())
+            guild.addRoleToMember(event.getMember(), events.get(event.getReactionEmote().getEmote().getName())).queue();
+
+    }
+
+    public static void eventrem(MessageReactionRemoveEvent event){
+
+        if (event.getReactionEmote().getEmoji().equals("\uD83C\uDFB2")) {
+
+            for (Map.Entry<String, Role> entry : events.entrySet()) {
+
+                String key = entry.getKey();
+                Role value = entry.getValue();
+
+                guild.removeRoleFromMember(event.getMember(), value).queue();
+
+            }
+            return;
+
+        }
+
+        if (event.getReactionEmote().isEmoji())
+            guild.removeRoleFromMember(event.getMember(), events.get(event.getReactionEmote().getEmoji())).queue();
+
+        if (event.getReactionEmote().isEmote())
+            guild.removeRoleFromMember(event.getMember(), events.get(event.getReactionEmote().getEmote().getName())).queue();
+
+
+
+    }
+
+    public static Role roleast () {
+
+        Role kleinsteRolle = null;
+        int anzahl = -1;
+
+        for (Map.Entry<String, Role> entry : events.entrySet()) {
+
+            String key = entry.getKey();
+            Role value = entry.getValue();
+
+            if (anzahl < 0) {
+
+                anzahl = guild.getMembersWithRoles(value).size();
+                kleinsteRolle = value;
+
+            }
+
+            else if (anzahl > guild.getMembersWithRoles(value).size()) {
+
+                anzahl = guild.getMembersWithRoles(value).size();
+                kleinsteRolle = value;
+
+            }
+
+        }
+
+        System.out.println(kleinsteRolle.getName());
+
+        return  kleinsteRolle;
+    }
+
+    public static boolean hasEventRole (MessageReactionAddEvent event){
+
+        for (Map.Entry<String, Role> entry : events.entrySet()) {
+
+            String key = entry.getKey();
+            Role value = entry.getValue();
+
+            if (event.getMember().getRoles().contains(value)) {
+
+                guild.getTextChannelById("764946848833339442").getHistoryFromBeginning(100).queue(messageHistory ->
+                        messageHistory.getMessageById(event.getMessageId()).removeReaction(event.getReactionEmote().getEmoji(), event.getMember().getUser()).queue());
+
+                return true;
+
+            }
+
+        }
+
+        return false;
 
     }
 
