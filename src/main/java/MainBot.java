@@ -26,7 +26,7 @@ public class MainBot {
         try{
             JDABuilder builder = JDABuilder.createDefault(BOT_TOKEN);
             builder.enableIntents(GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_VOICE_STATES, GatewayIntent.GUILD_EMOJIS, GatewayIntent.DIRECT_MESSAGES, GatewayIntent.GUILD_PRESENCES, GatewayIntent.GUILD_MESSAGES, GatewayIntent.GUILD_MESSAGE_REACTIONS);
-            builder.setActivity(Activity.playing("Testing Events"));
+            builder.setActivity(Activity.playing("Discord"));
             builder.setChunkingFilter(ChunkingFilter.ALL);
             builder.setMemberCachePolicy(MemberCachePolicy.ALL);
             jda = builder.build();

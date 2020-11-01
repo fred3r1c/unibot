@@ -282,7 +282,7 @@ public class Rollen {
 
             if (event.getMember().getRoles().contains(value)) {
 
-                guild.getTextChannelById("764946848833339442").getHistoryFromBeginning(100).queue(messageHistory ->
+                guild.getTextChannelById("764946848833339442").getHistoryFromBeginning(3).queue(messageHistory ->
                         messageHistory.getMessageById(event.getMessageId()).removeReaction(event.getReactionEmote().getEmoji(), event.getMember().getUser()).queue());
 
                 return true;
