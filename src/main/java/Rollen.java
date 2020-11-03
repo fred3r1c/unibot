@@ -199,14 +199,14 @@ public class Rollen {
 
     public static void eventadd(MessageReactionAddEvent event){
 
-        System.out.println(event.getReactionEmote().getEmoji());
+        //System.out.println(event.getReactionEmote().getEmoji());
 
-        if (event.getReactionEmote().getEmoji().equals("\uD83C\uDFB2")) {
-
-            guild.addRoleToMember(event.getMember(), roleast()).queue();
-            return;
-
-        }
+        //if (event.getReactionEmote().getEmoji().equals("\uD83C\uDFB2")) {
+        //
+        //    guild.addRoleToMember(event.getMember(), roleast()).queue();
+        //    return;
+        //
+        //}
 
         if (event.getReactionEmote().isEmoji())
             guild.addRoleToMember(event.getMember(), events.get(event.getReactionEmote().getEmoji())).queue();

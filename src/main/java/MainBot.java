@@ -26,7 +26,7 @@ public class MainBot {
         try{
             JDABuilder builder = JDABuilder.createDefault(BOT_TOKEN);
             builder.enableIntents(GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_VOICE_STATES, GatewayIntent.GUILD_EMOJIS, GatewayIntent.DIRECT_MESSAGES, GatewayIntent.GUILD_PRESENCES, GatewayIntent.GUILD_MESSAGES, GatewayIntent.GUILD_MESSAGE_REACTIONS);
-            builder.setActivity(Activity.playing("Discord"));
+            builder.setActivity(Activity.playing("GAMING-NIGHT!!!"));
             builder.setChunkingFilter(ChunkingFilter.ALL);
             builder.setMemberCachePolicy(MemberCachePolicy.ALL);
             jda = builder.build();
@@ -47,7 +47,7 @@ public class MainBot {
         //startMessageBot();        //rdytogo
         //stadtteile();             //rdytogo
         //rollenUebersichtsZuweisung();
-        //rollenevents();
+        rollenevents();
 
         //testNachricht();
 
@@ -431,7 +431,10 @@ public class MainBot {
         embedBuilder.setAuthor("Gaming-Night");
         embedBuilder.setTitle("Gruppen");
         embedBuilder.setDescription("Willkommen bei unserem ersten online-Event!" +
-                "\n\n Im folgenden kommst du mit \uD83C\uDFB2 in eine Zufällige Gruppe oder du wählst eine bestimme Gruppe aus mit den Emojis 🇦 bis 🇹");
+                "\n\nIm folgenden kannst du mit den Emojis 🇦 bis 🇹 eine Gruppe auswählen in der du mit anderen gamen kannst." +
+                "\nAufgrund von Limitierungen unseres Bots seitens Discord bitten wir euch, gezielt eine einzelne Gruppe, und nicht mehr als eine gleichzeitig, zu wählen und eventuell mit kleinen Verzögerungen zu rechnen." +
+                "\nSollte es nicht funktionieren und du hast schon etwas gewartet (>1 Minute), melde dich gerne bei einem der <@&740931533443170326>, wir fügen dich manuell hinzu \uD83D\uDE42");
+
 
         EventListener.events.sendMessage(embedBuilder.build()).queue(message -> {
 
