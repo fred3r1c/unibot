@@ -1,5 +1,6 @@
 package main.java;
 
+import org.apache.log4j.Logger;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -13,14 +14,17 @@ import net.dv8tion.jda.api.utils.MemberCachePolicy;
 
 import javax.security.auth.login.LoginException;
 import java.awt.*;
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class MainBot {
 
     public static final String BOT_TOKEN = "NzUzNjEzMjM5MjcwNTA2NTE3.X1ovBQ.Y9LPSiKGzF6Opt44G9wu-mKJMBI";
     public static JDA jda;
+    static Logger log = Logger.getLogger(MainBot.class.getName());
 
-    public static void main(String[] args) {
+    public static void main(String[] args)throws IOException, SQLException {
 
 
         try{
@@ -48,6 +52,7 @@ public class MainBot {
         //stadtteile();             //rdytogo
         //rollenUebersichtsZuweisung();
         //rollenevents();
+        log.info("info");
 
         //testNachricht();
 
