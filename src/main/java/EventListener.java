@@ -24,6 +24,7 @@ public class EventListener extends ListenerAdapter {
 
 
 
+
     public void msg(String msg){
         botkonsole.sendMessage(msg).queue();
     }
