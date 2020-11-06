@@ -1,5 +1,7 @@
 package main.java;
 
+import net.dv8tion.jda.api.entities.MessageActivity;
+import net.dv8tion.jda.internal.entities.ActivityImpl;
 import org.apache.log4j.Logger;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
@@ -22,7 +24,6 @@ public class MainBot {
 
     public static final String BOT_TOKEN = "NzUzNjEzMjM5MjcwNTA2NTE3.X1ovBQ.Y9LPSiKGzF6Opt44G9wu-mKJMBI";
     public static JDA jda;
-    static Logger log = Logger.getLogger(MainBot.class.getName());
 
     public static void main(String[] args)throws IOException, SQLException {
 
@@ -30,7 +31,7 @@ public class MainBot {
         try{
             JDABuilder builder = JDABuilder.createDefault(BOT_TOKEN);
             builder.enableIntents(GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_VOICE_STATES, GatewayIntent.GUILD_EMOJIS, GatewayIntent.DIRECT_MESSAGES, GatewayIntent.GUILD_PRESENCES, GatewayIntent.GUILD_MESSAGES, GatewayIntent.GUILD_MESSAGE_REACTIONS);
-            builder.setActivity(Activity.playing("GAMING-NIGHT!!!"));
+            builder.setActivity(Activity.playing("Schönes Wochenende!"))
             builder.setChunkingFilter(ChunkingFilter.ALL);
             builder.setMemberCachePolicy(MemberCachePolicy.ALL);
             jda = builder.build();
@@ -52,7 +53,6 @@ public class MainBot {
         //stadtteile();             //rdytogo
         //rollenUebersichtsZuweisung();
         //rollenevents();
-        log.info("info");
 
         //testNachricht();
 
