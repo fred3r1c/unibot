@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 public class MainBot {
 
-    public static final String BOT_TOKEN = "NzUzNjEzMjM5MjcwNTA2NTE3.X1ovBQ.Y9LPSiKGzF6Opt44G9wu-mKJMBI";
+    public static final String BOT_TOKEN = "NzUzNjEzMjM5MjcwNTA2NTE3.X1ovBQ.c_V4h1jL0r7YkxFN0ZxhGvDv9KM";
     public static JDA jda;
 
     public static void main(String[] args)throws IOException, SQLException {
