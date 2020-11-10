@@ -16,19 +16,31 @@ import net.dv8tion.jda.api.utils.MemberCachePolicy;
 
 import javax.security.auth.login.LoginException;
 import java.awt.*;
+import java.io.FileReader;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Properties;
 
 public class MainBot {
 
-    public static final String BOT_TOKEN = "NzUzNjEzMjM5MjcwNTA2NTE3.X1ovBQ.bNcmI64nt6xGRWbcZDRGDvQ7TxM";
+	private static final Properties login;
+    public static final String BOT_TOKEN;
     public static JDA jda;
+	
+    static{
+		login = new Properties();
+		try (FileReader in = new FileReader("login.properties")){
+			login.load(in);
+		} catch (Exception e){
+			try (FileReader in = new FileReader("//root//login.properties")){
+				login.load(in);
+			} catch (Exception ignored){}
+		}
+		BOT_TOKEN = login.getProperty("token");
+	}
 
-
-    public static void main(String[] args)throws IOException, SQLException {
-
-
+    public static void main(String[] args) {
         try{
             JDABuilder builder = JDABuilder.createDefault(BOT_TOKEN);
             builder.enableIntents(GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_VOICE_STATES, GatewayIntent.GUILD_EMOJIS, GatewayIntent.DIRECT_MESSAGES, GatewayIntent.GUILD_PRESENCES, GatewayIntent.GUILD_MESSAGES, GatewayIntent.GUILD_MESSAGE_REACTIONS);
