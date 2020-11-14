@@ -3,6 +3,7 @@ package main.java;
 import net.dv8tion.jda.api.MessageBuilder;
 import net.dv8tion.jda.api.entities.*;
 import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent;
+import net.dv8tion.jda.api.events.guild.member.GuildMemberRemoveEvent;
 import net.dv8tion.jda.api.events.guild.member.GuildMemberRoleAddEvent;
 import net.dv8tion.jda.api.events.guild.member.GuildMemberRoleRemoveEvent;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
@@ -103,9 +104,24 @@ public class EventListener extends ListenerAdapter {
 
     @Override
     public void onGuildMemberJoin(GuildMemberJoinEvent event){
-        
+
         EventListener.guild.addRoleToMember(event.getMember(), EventListener.guild.getRoleById("769931144221163550")).queue();
 
+        guild.getGuildChannelById("776545594163331123")
+                .getManager()
+                .setName("\uD835\uDDAC" + "embers" + "\u2236" + guild.getMemberCount())
+                .queue();
+
+    }
+
+    @Override
+    public void onGuildMemberRemove(GuildMemberRemoveEvent event){
+        System.out.println("member left");
+
+        guild.getGuildChannelById("776545594163331123")
+                .getManager()
+                .setName("\uD835\uDDAC" + "embers" + "\u2236" + guild.getMemberCount())
+                .queue();
     }
 
     @Override
