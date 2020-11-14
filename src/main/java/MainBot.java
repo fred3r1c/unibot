@@ -22,6 +22,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Properties;
 
+//Das ist ein Kommentar, zum testen der geforkten Repos
+
 public class MainBot {
 
 	private static final Properties login;
