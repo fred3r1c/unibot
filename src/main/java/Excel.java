@@ -229,7 +229,8 @@ public class Excel {
 
         try {
 
-            Files.delete(Paths.get("src\\main\\resources\\Files\\" + eventName + ".xlsx"));
+            Files.delete(Paths.get("//var//lib//jenkins//workspace//MoritzUnibot//src//main//resources//Files//" + eventName + ".xlsx"));
+            //Files.delete(Paths.get("src\\main\\resources\\Files\\" + eventName + ".xlsx"));
 
             sudo.out("Event " + eventName + " wurde erfolgreich gelöscht", true, "deleteEvent");
 
