@@ -261,6 +261,8 @@ public class Excel {
 
         sudo.out("Es werden " + getMaxTeilnehmer(workbook) + "Membern die Eventrollen vom Event " + eventName + " entzogen." , true, "purge");
 
+        resetEvent(eventName);
+
 
 
         if (delete){
