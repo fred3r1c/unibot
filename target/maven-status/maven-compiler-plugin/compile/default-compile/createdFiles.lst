@@ -1,3 +1,8 @@
-Commands.class
-EventListener$1.class
-Ausgaben.class
+main\java\Exel.class
+main\java\EventListener$1.class
+main\java\Ausgaben.class
+main\java\EventListener.class
+main\java\MainBot.class
+main\java\Commands.class
+main\java\Rollen.class
+main\java\sudo.class

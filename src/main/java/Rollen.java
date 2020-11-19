@@ -2,15 +2,12 @@ package main.java;
 
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Guild;
-import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Role;
-import net.dv8tion.jda.api.events.message.guild.react.GuildMessageReactionAddEvent;
 import net.dv8tion.jda.api.events.message.react.MessageReactionAddEvent;
 import net.dv8tion.jda.api.events.message.react.MessageReactionRemoveEvent;
 
-import java.sql.Array;
-import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Rollen {
@@ -45,7 +42,7 @@ public class Rollen {
         module.put("\uD83C\uDFA2", guild.getRoleById("769900651655462922")); //Physik für Elektroingenieure
 
         module.put("\uD83D\uDCCA", guild.getRoleById("768142504145977384")); //Analysis 3
-        module.put("⚡",           guild.getRoleById("768143242150674452")); //Elektromagnetische Feldtheorie   https://stackoverflow.com/questions/64201872/how-to-get-the-message-before-the-last-message-in-discord-jda-listshttps://stackoverflow.com/questions/64201872/how-to-get-the-message-before-the-last-message-in-discord-jda-lists
+        module.put("⚡",           guild.getRoleById("768143242150674452")); //Elektromagnetische Feldtheorie
         module.put("\uD83D\uDCE1", guild.getRoleById("768143269694799903")); //Signaltheorie
         module.put("\uD83D\uDD29", guild.getRoleById("768143272731213825")); //Festkörper-, Halbleiter- und Bauelementephysik
         module.put("\uD83D\uDD2E", guild.getRoleById("768143275340333076")); //Stochastische Signale
@@ -145,8 +142,6 @@ public class Rollen {
 
     public static void welcomeadd(MessageReactionAddEvent event){
 
-
-
         guild.addRoleToMember(event.getMember(), module.get(event.getReactionEmote().getEmoji())).queue();
 
     }
@@ -201,18 +196,26 @@ public class Rollen {
 
         //System.out.println(event.getReactionEmote().getEmoji());
 
-        //if (event.getReactionEmote().getEmoji().equals("\uD83C\uDFB2")) {
-        //
-        //    guild.addRoleToMember(event.getMember(), roleast()).queue();
-        //    return;
-        //
-        //}
+        if (event.getReactionEmote().getEmoji().equals("\uD83C\uDFB2")) {
 
-        if (event.getReactionEmote().isEmoji())
+            guild.addRoleToMember(event.getMember(), Excel.getRole("GamingNight")).queue();
+            return;
+
+        }
+
+        if (event.getReactionEmote().isEmoji()) {
+
             guild.addRoleToMember(event.getMember(), events.get(event.getReactionEmote().getEmoji())).queue();
+            Excel.changeMemberInList("GamingNight", events.get(event.getReactionEmote().getEmoji()).getId(), true);
 
-        if (event.getReactionEmote().isEmote())
+        }
+
+        if (event.getReactionEmote().isEmote()) {
+
             guild.addRoleToMember(event.getMember(), events.get(event.getReactionEmote().getEmote().getName())).queue();
+            Excel.changeMemberInList("GamingNight", events.get(event.getReactionEmote().getEmote().getName()).getId(), true);
+
+        }
 
     }
 
@@ -220,29 +223,39 @@ public class Rollen {
 
         if (event.getReactionEmote().getEmoji().equals("\uD83C\uDFB2")) {
 
-            for (Map.Entry<String, Role> entry : events.entrySet()) {
+            List<Role> memberRollen = event.getMember().getRoles();
 
-                String key = entry.getKey();
-                Role value = entry.getValue();
+            for (Role value : events.values()) {
 
-                guild.removeRoleFromMember(event.getMember(), value).queue();
+                if (memberRollen.contains(value)) {
+
+                    guild.removeRoleFromMember(event.getMember(), value).queue();
+                    Excel.changeMemberInList("GamingNight", value.getId(), false);
+
+                }
 
             }
+
             return;
 
         }
 
-        if (event.getReactionEmote().isEmoji())
+        if (event.getReactionEmote().isEmoji()) {
+
             guild.removeRoleFromMember(event.getMember(), events.get(event.getReactionEmote().getEmoji())).queue();
+            Excel.changeMemberInList("GamingNight", events.get(event.getReactionEmote().getEmoji()).getId(), false);
 
-        if (event.getReactionEmote().isEmote())
+        }
+
+        if (event.getReactionEmote().isEmote()) {
+
             guild.removeRoleFromMember(event.getMember(), events.get(event.getReactionEmote().getEmote().getName())).queue();
-
-
+            Excel.changeMemberInList("GamingNight", events.get(event.getReactionEmote().getEmote().getName()).getId(), false);
+        }
 
     }
 
-    public static Role roleast () {
+    /*public static Role roleast () {
 
         Role kleinsteRolle = null;
         int anzahl = -1;
@@ -271,7 +284,7 @@ public class Rollen {
         System.out.println(kleinsteRolle.getName());
 
         return  kleinsteRolle;
-    }
+    }*/
 
     public static boolean hasEventRole (MessageReactionAddEvent event){
 
@@ -282,7 +295,7 @@ public class Rollen {
 
             if (event.getMember().getRoles().contains(value)) {
 
-                guild.getTextChannelById("764946848833339442").getHistoryFromBeginning(3).queue(messageHistory ->
+                guild.getTextChannelById("764946848833339442").getHistoryFromBeginning(10).queue(messageHistory ->
                         messageHistory.getMessageById(event.getMessageId()).removeReaction(event.getReactionEmote().getEmoji(), event.getMember().getUser()).queue());
 
                 return true;

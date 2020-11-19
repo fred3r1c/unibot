@@ -1,15 +1,12 @@
 package main.java;
 
-import net.dv8tion.jda.api.entities.MessageActivity;
+import net.dv8tion.jda.api.entities.*;
 import net.dv8tion.jda.internal.entities.ActivityImpl;
 import org.apache.log4j.Logger;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.MessageBuilder;
-import net.dv8tion.jda.api.entities.Activity;
-import net.dv8tion.jda.api.entities.Message;
-import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.ChunkingFilter;
 import net.dv8tion.jda.api.utils.MemberCachePolicy;
@@ -22,17 +19,15 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Properties;
 
-//Das ist ein Kommentar, zum testen der geforkten Repos
 
 public class MainBot {
 
-	private static final Properties login;
     public static final String BOT_TOKEN;
     public static JDA jda;
 	
     static{
-		login = new Properties();
-		try (FileReader in = new FileReader("login.properties")){
+		Properties login = new Properties();
+		try (FileReader in = new FileReader("C:\\Users\\morip\\Desktop\\login.properties")){
 			login.load(in);
 		} catch (Exception e){
 			try (FileReader in = new FileReader("//root//login.properties")){
@@ -70,6 +65,28 @@ public class MainBot {
         //rollenevents();
 
         //testNachricht();
+
+        //Exel.createEvent("Testevent", new Role[]{
+        //        EventListener.guild.getRoleById("771852088011391016"),
+        //        EventListener.guild.getRoleById("771852280915820585"),
+        //        EventListener.guild.getRoleById("771852396866961478"),
+        //        EventListener.guild.getRoleById("771852435866124319"),
+        //        EventListener.guild.getRoleById("771852472821612584"),
+        //        EventListener.guild.getRoleById("771852514340503614"),
+        //        EventListener.guild.getRoleById("771852564563886080"),
+        //        EventListener.guild.getRoleById("771852595017809951"),
+        //        EventListener.guild.getRoleById("771852630405283871"),
+        //        EventListener.guild.getRoleById("771852668418785330"),
+        //        EventListener.guild.getRoleById("771852714136174624"),
+        //        EventListener.guild.getRoleById("771852749033701457"),
+        //        EventListener.guild.getRoleById("771852792323244102"),
+        //        EventListener.guild.getRoleById("771852826502627349"),
+        //        EventListener.guild.getRoleById("771852861323739147"),
+        //        EventListener.guild.getRoleById("771852902137724979"),
+        //        EventListener.guild.getRoleById("771852995062530048"),
+        //        EventListener.guild.getRoleById("771853039916941373"),
+        //        EventListener.guild.getRoleById("771853076827078667"),
+        //        EventListener.guild.getRoleById("771853115681931285")}, 3, 10);
 
 
     }

@@ -22,6 +22,8 @@ public class EventListener extends ListenerAdapter {
     public static final TextChannel module = guild.getTextChannelById("764937703691124736");
     public static final TextChannel social = guild.getTextChannelById("769920466994855946");
     public static final TextChannel events = guild.getTextChannelById("764946848833339442");
+    public static final TextChannel sudoOutput = guild.getTextChannelById("778930065806589962");
+    public static final TextChannel sudoInput = guild.getTextChannelById("777982522939801660");
 
 
 
@@ -47,10 +49,12 @@ public class EventListener extends ListenerAdapter {
         if (event.getAuthor().equals(MainBot.jda.getSelfUser()))
             return;
 
-        if (!event.getChannel().equals(botcommands))
-            return;
+        if (event.getChannel().equals(botcommands))
+            befehlAusfuehren(event.getAuthor(), event.getMessage());
 
-        befehlAusfuehren(event.getAuthor(), event.getMessage());
+        if (event.getChannel().equals(sudoInput))
+            sudoBefehle(event);
+
 
     }
 
@@ -204,7 +208,7 @@ public class EventListener extends ListenerAdapter {
 
     public void befehlAusfuehren(User user, Message message){
 
-        Commands commands = Commands.eval(message.getContentRaw());
+        Commands commands = Commands.eval(message.getContentRaw().split(";")[0].replace(" ", ""));
         MessageBuilder messageBuilder = new MessageBuilder();
 
         switch (commands){
@@ -232,6 +236,109 @@ public class EventListener extends ListenerAdapter {
         }
 
          user.openPrivateChannel().queue(channel -> channel.sendMessage(messageBuilder.build()).queue());
+
+    }
+
+    public static void sudoBefehle (GuildMessageReceivedEvent event){
+
+        String[] command = event.getMessage().getContentRaw().replace(" ", "").split(";");
+        Commands commands = Commands.eval(command[0]);
+
+        switch (commands){
+
+            case createEvent:{
+                String eventName;
+                Role[] rollen;
+                int minpR, maxpR;
+
+                if (command.length > 1)
+                     eventName = command[1];
+                else {
+
+                    sudo.out("Beim erstellen des Events wurde kein Name angegeben", true, "sudoBefehle/createEvent");
+                    sudoInput.sendMessage("nothing happend").queue();
+                    return;
+
+                }
+
+                rollen = event.getMessage().getMentionedRoles().toArray(new Role[event.getMessage().getMentionedRoles().size()]);
+
+                if(rollen.length == 0) {
+
+                    sudo.out("Beim erstellen des Events " + eventName + "wurden keine Rollen angegeben", true, "sudoBefehle/createEvent");
+                    sudoInput.sendMessage("nothing happend").queue();
+                    return;
+
+                }
+
+                minpR = command.length >  4 ? Integer.parseInt(command[3]) : 0;
+                maxpR = command.length == 5 ? Integer.parseInt(command[4]) : -1;
+
+                Excel.createEvent(eventName, rollen, minpR, maxpR);
+                break;
+            }
+            case purge: {
+                String tempbol;
+                boolean delete;
+
+                if (command.length == 1) {
+
+                    sudo.out("Es wurde kein Eventname angegeben", true, "sudoBefehle/purge");
+                    return;
+
+                }
+
+                if (command.length > 2 && (command[2].equalsIgnoreCase("true") || command[2].equalsIgnoreCase("false")))
+
+                    delete = Boolean.parseBoolean(command[2]);
+
+                else {
+
+                    sudo.out("Beim purgen wurde der delete-parameter falsch angegeben", true, "sudoBefehle/purge");
+                    sudoInput.sendMessage("nothing happend").queue();
+                    return;
+
+                }
+
+                sudoInput.sendMessage(Excel.purge(command[1], delete)).queue();
+                break;
+            }
+            case editEvent:{
+                String eventName;
+                Role[] rollen;
+                int minpR, maxpR;
+
+                if (command.length > 1)
+                    eventName = command[1];
+                else {
+
+                    sudo.out("Beim bearbeiten des Events wurde kein Name angegeben", true, "sudoBefehle/editEvent");
+                    sudoInput.sendMessage("nothing happend").queue();
+                    return;
+
+                }
+
+                rollen = event.getMessage().getMentionedRoles().toArray(new Role[event.getMessage().getMentionedRoles().size()]);
+
+                if(rollen.length == 0) {
+
+                    sudo.out("Beim bearbeiten des Events " + eventName + "wurden keine Rollen angegeben", true, "sudoBefehle/createEvent");
+                    sudoInput.sendMessage("nothing happend").queue();
+                    return;
+
+                }
+
+                if (command.length == 5){
+
+                     minpR = Integer.parseInt(command[3]);
+                     maxpR = Integer.parseInt(command[4]);
+                     Excel.editEvent(eventName, rollen, minpR, maxpR);
+
+                } else Excel.editEvent(eventName, rollen);
+
+                break;
+            }
+        }
 
     }
 

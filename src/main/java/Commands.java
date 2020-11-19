@@ -2,7 +2,7 @@ package main.java;
 
 public enum Commands {
 
-    hallo, unknown, termine, help, stundenplan;
+    hallo, unknown, termine, help, stundenplan, createEvent, purge, editEvent;
 
     public static Commands eval(String msg) {
 
@@ -20,6 +20,14 @@ public enum Commands {
         if (msg.equals("!stundenplan") || msg.equals("!plan"))
             return stundenplan;
 
+        if (msg.equals("!createevent"))
+            return createEvent;
+
+        if (msg.equals("!purge"))
+            return purge;
+
+        if (msg.equals("!editevent"))
+            return editEvent;
         
         return unknown;
     }
