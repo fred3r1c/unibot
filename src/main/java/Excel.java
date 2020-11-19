@@ -46,7 +46,7 @@ public class Excel {
     public static HSSFWorkbook getEvent(String eventName) {
 
         try {
-            FileOutputStream out = new FileOutputStream(new File("//var//lib//jenkins//workspace//MoritzUnibot//src//main//resources//Files//" + eventName + ".xlsx"));
+            FileInputStream file = new FileInputStream(new File("//var//lib//jenkins//workspace//MoritzUnibot//src//main//resources//Files//" + eventName + ".xlsx"));
             //FileInputStream file = new FileInputStream(new File("src\\main\\resources\\Files\\" + eventName + ".xlsx"));
 
             HSSFWorkbook workbook = new HSSFWorkbook(file);
