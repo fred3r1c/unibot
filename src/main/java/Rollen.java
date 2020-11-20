@@ -244,8 +244,7 @@ public class Rollen {
             return;
         }
 
-        if ((event.getReactionEmote().isEmote() && event.getReactionEmote().getEmote().equals(
-                EventListener.guild.getEmotesByName("AmongUs", false).get(0)))) {
+        if (event.getReactionEmote().getEmoji().equals("\uD83C\uDD70")) {
             guild.addRoleToMember(event.getMember(), Excel.getRole("AmongUs")).queue();                                       //AmongUs
             return;
         }
@@ -313,9 +312,8 @@ public class Rollen {
             remMember(memberRollen, "StadtLandFluss", event.getMember());                                        //🗺
             return;
         }
-
-        if ((event.getReactionEmote().isEmote() && event.getReactionEmote().getEmote().equals(
-                EventListener.guild.getEmotesByName("AmongUs", false).get(0)))) {
+                                                                                                                                             🅰
+        if (event.getReactionEmote().getEmoji().equals("\uD83C\uDD70")) {
             remMember(memberRollen, "AmongUs", event.getMember());                                        //AmongUs
             return;
         }
