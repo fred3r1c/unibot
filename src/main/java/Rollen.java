@@ -230,10 +230,24 @@ public class Rollen {
         //System.out.println(event.getReactionEmote().getEmoji());
 
         if (event.getReactionEmote().getEmoji().equals("\uD83C\uDFB2")) {
-
-            guild.addRoleToMember(event.getMember(), Excel.getRole("GamingNight")).queue();
+            guild.addRoleToMember(event.getMember(), Excel.getRole("freiesEvent")).queue();                                       //🎲
             return;
+        }
 
+        if (event.getReactionEmote().getEmoji().equals("\uD83D\uDD8C")) {
+            guild.addRoleToMember(event.getMember(), Excel.getRole("Scribble")).queue();                                        //🖌
+            return;
+        }
+
+        if (event.getReactionEmote().getEmoji().equals("\uD83D\uDDFA")) {
+            guild.addRoleToMember(event.getMember(), Excel.getRole("StadtLandFluss")).queue();                                       //🗺
+            return;
+        }
+
+        if ((event.getReactionEmote().isEmote() && event.getReactionEmote().getEmote().equals(
+                EventListener.guild.getEmotesByName("AmongUs", false).get(0)))) {
+            guild.addRoleToMember(event.getMember(), Excel.getRole("AmongUs")).queue();                                       //AmongUs
+            return;
         }
 
         if (event.getReactionEmote().isEmoji()) {
@@ -242,6 +256,7 @@ public class Rollen {
 
                 guild.addRoleToMember(event.getMember(), events.get(event.getReactionEmote().getEmoji())).queue();
                 Excel.changeMemberInList("AmongUs", events.get(event.getReactionEmote().getEmoji()).getId(), true);
+                return;
 
             }
 
@@ -249,6 +264,7 @@ public class Rollen {
 
                 guild.addRoleToMember(event.getMember(), events.get(event.getReactionEmote().getEmoji())).queue();
                 Excel.changeMemberInList("Scribble", events.get(event.getReactionEmote().getEmoji()).getId(), true);
+                return;
 
             }
 
@@ -256,6 +272,7 @@ public class Rollen {
 
                 guild.addRoleToMember(event.getMember(), events.get(event.getReactionEmote().getEmoji())).queue();
                 Excel.changeMemberInList("StadtLandFluss", events.get(event.getReactionEmote().getEmoji()).getId(), true);
+                return;
 
             }
 
@@ -263,6 +280,7 @@ public class Rollen {
 
                 guild.addRoleToMember(event.getMember(), events.get(event.getReactionEmote().getEmoji())).queue();
                 Excel.changeMemberInList("freiesEvent", events.get(event.getReactionEmote().getEmoji()).getId(), true);
+                return;
 
             }
 
@@ -281,24 +299,26 @@ public class Rollen {
 
         List<Role> memberRollen = event.getMember().getRoles();
 
-        if (event.getReactionEmote().getEmoji().equals("\uD83C\uDFB2")
-                || event.getReactionEmote().getEmoji().equals("\uD83D\uDD8C")
-                || event.getReactionEmote().getEmoji().equals("\uD83D\uDDFA")
-                || (event.getReactionEmote().isEmote() && event.getReactionEmote().getEmote().equals(
-                            EventListener.guild.getEmotesByName("AmongUs", false).get(0))));
-
-        if (event.getReactionEmote().getEmoji().equals("\uD83C\uDFB2"))
+        if (event.getReactionEmote().getEmoji().equals("\uD83C\uDFB2")) {
             remMember(memberRollen, "freiesEvent", event.getMember());                                        //🎲
+            return;
+        }
 
-        if (event.getReactionEmote().getEmoji().equals("\uD83D\uDD8C"))
+        if (event.getReactionEmote().getEmoji().equals("\uD83D\uDD8C")) {
             remMember(memberRollen, "Scribble", event.getMember());                                        //🖌
+            return;
+        }
 
-        if (event.getReactionEmote().getEmoji().equals("\uD83D\uDDFA"))
+        if (event.getReactionEmote().getEmoji().equals("\uD83D\uDDFA")) {
             remMember(memberRollen, "StadtLandFluss", event.getMember());                                        //🗺
+            return;
+        }
 
         if ((event.getReactionEmote().isEmote() && event.getReactionEmote().getEmote().equals(
-                EventListener.guild.getEmotesByName("AmongUs", false).get(0))))
+                EventListener.guild.getEmotesByName("AmongUs", false).get(0)))) {
             remMember(memberRollen, "AmongUs", event.getMember());                                        //AmongUs
+            return;
+        }
 
         if (event.getReactionEmote().isEmoji()) {
 
@@ -306,6 +326,7 @@ public class Rollen {
 
                 guild.removeRoleFromMember(event.getMember(), events.get(event.getReactionEmote().getEmoji())).queue();
                 Excel.changeMemberInList("AmongUs", events.get(event.getReactionEmote().getEmoji()).getId(), false);
+                return;
 
             }
 
@@ -313,6 +334,7 @@ public class Rollen {
 
                 guild.removeRoleFromMember(event.getMember(), events.get(event.getReactionEmote().getEmoji())).queue();
                 Excel.changeMemberInList("Scribble", events.get(event.getReactionEmote().getEmoji()).getId(), false);
+                return;
 
             }
 
@@ -320,6 +342,7 @@ public class Rollen {
 
                 guild.removeRoleFromMember(event.getMember(), events.get(event.getReactionEmote().getEmoji())).queue();
                 Excel.changeMemberInList("StadtLandFluss", events.get(event.getReactionEmote().getEmoji()).getId(), false);
+                return;
 
             }
 
@@ -327,6 +350,7 @@ public class Rollen {
 
                 guild.removeRoleFromMember(event.getMember(), events.get(event.getReactionEmote().getEmoji())).queue();
                 Excel.changeMemberInList("freiesEvent", events.get(event.getReactionEmote().getEmoji()).getId(), false);
+                return;
 
             }
 
