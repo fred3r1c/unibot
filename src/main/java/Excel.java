@@ -256,6 +256,10 @@ public class Excel {
 
         Arrays.stream(rollen).forEach(role -> System.out.println(role.getName()));
 
+        int i = 0;
+
+        EventListener.guild.getMembersWithRoles(rollen).forEach(member ->  System.out.println(member.toString()));
+
         EventListener.guild.getMembersWithRoles(rollen).forEach(member -> {
 
                 //System.out.println(member.toString() + "\n\n");
