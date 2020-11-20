@@ -519,7 +519,7 @@ public class MainBot {
         embedBuilder.setTitle("<:AmongUs:765248376051728434>Among Us");
         embedBuilder.setDescription("Willkommen bei unserem zweiten online-Event!" +
                 "\n\nIm folgenden kannst du mit den Emojis 🇦 bis 🇫 eine Gruppe auswählen in der du mit anderen gamen kannst. " +
-                "Oder du wirst mit dem <:AmongUs:765248376051728434> Emote in eine zufällige Among Us Gruppe getan.");
+                "Oder du wirst mit dem 🅰 Emote in eine zufällige Among Us Gruppe getan.");
 
 
         EventListener.events.sendMessage(embedBuilder.build()).queue(message -> {
@@ -530,7 +530,7 @@ public class MainBot {
             message.addReaction("🇩").queue();
             message.addReaction("🇪").queue();
             message.addReaction("🇫").queue();
-            message.addReaction(EventListener.guild.getEmotesByName("AmongUs", false).get(0));
+            message.addReaction("🅰").queue();
         });
 
     }
