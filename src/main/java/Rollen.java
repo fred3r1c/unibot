@@ -312,7 +312,7 @@ public class Rollen {
             remMember(memberRollen, "StadtLandFluss", event.getMember());                                        //🗺
             return;
         }
-                                                                                                                                             🅰
+
         if (event.getReactionEmote().getEmoji().equals("\uD83C\uDD70")) {
             remMember(memberRollen, "AmongUs", event.getMember());                                        //AmongUs
             return;
