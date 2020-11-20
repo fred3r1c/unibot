@@ -253,7 +253,7 @@ public class Excel {
 
         Role[] rollen = getRoles(workbook);
 
-        EventListener.guild.getMembersWithRoles(rollen).stream().forEach(member -> {
+        EventListener.guild.getMembers().stream().forEach(member -> {
 
                 for (Role role : rollen) EventListener.guild.removeRoleFromMember(member, role).queue();
 

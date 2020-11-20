@@ -17,6 +17,7 @@ public class Rollen {
     public static final HashMap<String, Role> module = new HashMap<String, Role>();
     public static final HashMap<String, Role> social = new HashMap<String, Role>();
     public static final HashMap<String, Role> events = new HashMap<String, Role>();
+    public static final HashMap<String, String> eventName = new HashMap<String, String>();
 
     public static final String discordVideo = "";
 
@@ -112,6 +113,7 @@ public class Rollen {
         events.put("🇸", guild.getRoleById("771853076827078667"));  //S
         events.put("🇹", guild.getRoleById("771853115681931285"));  //T
 
+        //eventName.put()
 
     }
 

@@ -88,6 +88,10 @@ public class MainBot {
         //        EventListener.guild.getRoleById("771853076827078667"),
         //        EventListener.guild.getRoleById("771853115681931285")}, 3, 10);
 
+        System.out.println(EventListener.guild.getMemberById("251966848084606978").getEffectiveName());
+        EventListener.guild.removeRoleFromMember(EventListener.guild.getMemberById("251966848084606978"), EventListener.guild.getRoleById("779040926148460554")).queue();
+
+
 
     }
 
@@ -498,6 +502,24 @@ public class MainBot {
             message.addReaction("🇹").queue();
 
         });
+
+
+
+    }
+
+    public static void amongUsEvent () {
+
+
+
+    }
+
+    public static void scribbleEvent () {
+
+
+
+    }
+
+    public static void slfEvent() {
 
 
 
