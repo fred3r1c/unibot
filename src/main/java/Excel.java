@@ -258,7 +258,7 @@ public class Excel {
 
         int i = 0;
 
-        EventListener.guild.getMembersWithRoles(rollen).forEach(member ->  System.out.println(member.toString()));
+        if (EventListener.guild.getMembersWithRoles(rollen).size() == 0) System.out.println("es is null");
 
         EventListener.guild.getMembersWithRoles(rollen).forEach(member -> {
 
