@@ -254,18 +254,30 @@ public class Excel {
 
         Role[] rollen = getRoles(workbook);
 
-        Arrays.stream(rollen).forEach(role -> System.out.println(role.getName()));
+        Arrays.stream(rollen).forEach(role -> {
 
-        int i = 0;
 
-        if (EventListener.guild.getMembersWithRoles(rollen).size() == 0) System.out.println("es is null");
+            System.out.println(role.getName());
 
-        EventListener.guild.getMembersWithRoles(rollen).forEach(member -> {
+            EventListener.guild.getMembersWithRoles(role).forEach(member -> {
 
-                //System.out.println(member.toString() + "\n\n");
-                for (Role role : rollen) EventListener.guild.removeRoleFromMember(member, role).queue();
+                System.out.println(member.toString() + "\n\n");
+                EventListener.guild.removeRoleFromMember(member, role).queue();
+
+            });
 
         });
+
+        //int i = 0;
+        //
+        //if (EventListener.guild.getMembersWithRoles(rollen).size() == 0) System.out.println("es is null");
+        //
+        //EventListener.guild.getMembersWithRoles(rollen).forEach(member -> {
+        //
+        //        //System.out.println(member.toString() + "\n\n");
+        //        for (Role role : rollen) EventListener.guild.removeRoleFromMember(member, role).queue();
+        //
+        //});
 
         sudo.out("Es werden " + getMaxTeilnehmer(workbook) + "Membern die Eventrollen vom Event " + eventName + " entzogen." , true, "purge");
 
