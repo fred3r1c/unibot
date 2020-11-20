@@ -42,7 +42,7 @@ public class MainBot {
         try{
             JDABuilder builder = JDABuilder.createDefault(BOT_TOKEN);
             builder.enableIntents(GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_VOICE_STATES, GatewayIntent.GUILD_EMOJIS, GatewayIntent.DIRECT_MESSAGES, GatewayIntent.GUILD_PRESENCES, GatewayIntent.GUILD_MESSAGES, GatewayIntent.GUILD_MESSAGE_REACTIONS);
-            builder.setActivity(Activity.playing("Schönes Wochenende!"));
+            builder.setActivity(Activity.playing("Gaming Night 19:00Uhr!!!"));
             builder.setChunkingFilter(ChunkingFilter.ALL);
             builder.setMemberCachePolicy(MemberCachePolicy.ALL);
             jda = builder.build();
@@ -91,6 +91,11 @@ public class MainBot {
 
         //System.out.println("test");
         //EventListener.guild.getMembersWithRoles(Rollen.events.values()).stream().forEach(member -> System.out.println(member.toString() + "\n\n"));
+
+        amongUsEvent();
+        scribbleEvent();
+        slfEvent();
+        freiesEvent();
 
     }
 
@@ -508,19 +513,95 @@ public class MainBot {
 
     public static void amongUsEvent () {
 
+        EmbedBuilder embedBuilder = new EmbedBuilder();
 
+        embedBuilder.setAuthor("Gaming-Night");
+        embedBuilder.setTitle("<:AmongUs:765248376051728434>Among Us");
+        embedBuilder.setDescription("Willkommen bei unserem zweiten online-Event!" +
+                "\n\nIm folgenden kannst du mit den Emojis 🇦 bis 🇫 eine Gruppe auswählen in der du mit anderen gamen kannst. " +
+                "Oder du wirst mit dem <:AmongUs:765248376051728434> Emote in eine zufällige Among Us Gruppe getan.");
+
+
+        EventListener.events.sendMessage(embedBuilder.build()).queue(message -> {
+
+            message.addReaction("🇦").queue();
+            message.addReaction("🇧").queue();
+            message.addReaction("🇨").queue();
+            message.addReaction("🇩").queue();
+            message.addReaction("🇪").queue();
+            message.addReaction("🇫").queue();
+            message.addReaction(EventListener.guild.getEmotesByName("AmongUs", false).get(0));
+        });
 
     }
 
     public static void scribbleEvent () {
 
+        EmbedBuilder embedBuilder = new EmbedBuilder();
 
+        embedBuilder.setAuthor("Gaming-Night");
+        embedBuilder.setTitle("\uD83D\uDD8CScribble");
+        embedBuilder.setDescription("Willkommen bei unserem zweiten online-Event!" +
+                "\n\nIm folgenden kannst du mit den Emojis 🇬 bis 🇰 eine Gruppe auswählen in der du mit anderen gamen kannst." +
+                "Oder du wirst mit dem \uD83D\uDD8C Emote in eine zufällige Scribble Gruppe getan.");
+
+
+        EventListener.events.sendMessage(embedBuilder.build()).queue(message -> {
+
+            message.addReaction("🇬").queue();
+            message.addReaction("🇭").queue();
+            message.addReaction("🇮").queue();
+            message.addReaction("🇯").queue();
+            message.addReaction("🇰").queue();
+            message.addReaction("\uD83D\uDD8C").queue();
+
+        });
 
     }
 
     public static void slfEvent() {
 
+        EmbedBuilder embedBuilder = new EmbedBuilder();
 
+        embedBuilder.setAuthor("Gaming-Night");
+        embedBuilder.setTitle("\uD83D\uDDFAStadtLandFluss");
+        embedBuilder.setDescription("Willkommen bei unserem zweiten online-Event!" +
+                "\n\nIm folgenden kannst du mit den Emojis 🇦 bis 🇹 eine Gruppe auswählen in der du mit anderen gamen kannst." +
+                "Oder du wirst mit dem \uD83D\uDDFA Emote in eine zufällige StadtLandFluss Gruppe getan.");
+
+
+        EventListener.events.sendMessage(embedBuilder.build()).queue(message -> {
+
+            message.addReaction("🇱").queue();
+            message.addReaction("🇲").queue();
+            message.addReaction("🇳").queue();
+            message.addReaction("🇴").queue();
+            message.addReaction("🇵").queue();
+            message.addReaction("\uD83D\uDDFA").queue();
+
+        });
+    }
+
+    public static void freiesEvent() {
+
+        EmbedBuilder embedBuilder = new EmbedBuilder();
+
+        embedBuilder.setAuthor("Gaming-Night");
+        embedBuilder.setTitle("\uD83C\uDFB2freiesEvent");
+        embedBuilder.setDescription("Willkommen bei unserem zweiten online-Event!" +
+                "\n\nIm folgenden kannst du mit den Emojis 🇦 bis 🇹 eine Gruppe auswählen in der du mit anderen gamen kannst." +
+                "Oder du wirst mit dem \uD83C\uDFB2 Emote in eine zufällige freieEvent Gruppe getan.");
+
+
+        EventListener.events.sendMessage(embedBuilder.build()).queue(message -> {
+
+            message.addReaction("🇶").queue();
+            message.addReaction("🇷").queue();
+            message.addReaction("🇸").queue();
+            message.addReaction("🇹").queue();
+            message.addReaction("\uD83C\uDFB2").queue();
+
+            });
 
     }
 
