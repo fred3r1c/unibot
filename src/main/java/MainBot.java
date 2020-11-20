@@ -10,6 +10,7 @@ import net.dv8tion.jda.api.MessageBuilder;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.ChunkingFilter;
 import net.dv8tion.jda.api.utils.MemberCachePolicy;
+import org.apache.poi.ss.formula.functions.Even;
 
 import javax.security.auth.login.LoginException;
 import java.awt.*;
@@ -88,10 +89,8 @@ public class MainBot {
         //        EventListener.guild.getRoleById("771853076827078667"),
         //        EventListener.guild.getRoleById("771853115681931285")}, 3, 10);
 
-        System.out.println(EventListener.guild.getMemberById("251966848084606978").getEffectiveName());
-        EventListener.guild.removeRoleFromMember(EventListener.guild.getMemberById("251966848084606978"), EventListener.guild.getRoleById("779040926148460554")).queue();
-
-
+        //System.out.println("test");
+        //EventListener.guild.getMembersWithRoles(Rollen.events.values()).stream().forEach(member -> System.out.println(member.toString() + "\n\n"));
 
     }
 
