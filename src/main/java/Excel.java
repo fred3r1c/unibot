@@ -8,6 +8,7 @@ import org.apache.poi.ss.usermodel.Row;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.Random;
 
 public class Excel {
@@ -252,6 +253,8 @@ public class Excel {
             return "Fehler. Siehe <#778930065806589962>";
 
         Role[] rollen = getRoles(workbook);
+
+        Arrays.stream(rollen).forEach(role -> System.out.println(role.getName()));
 
         EventListener.guild.getMembersWithRoles(rollen).stream().forEach(member -> {
 
