@@ -257,11 +257,11 @@ public class Excel {
         Arrays.stream(rollen).forEach(role -> {
 
 
-            System.out.println(role.getName());
+            //System.out.println(role.getName());
 
             EventListener.guild.getMembersWithRoles(role).forEach(member -> {
 
-                System.out.println(member.toString() + "\n\n");
+                //System.out.println(member.toString() + "\n\n");
                 EventListener.guild.removeRoleFromMember(member, role).queue();
 
             });
