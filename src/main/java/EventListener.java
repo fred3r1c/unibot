@@ -111,6 +111,8 @@ public class EventListener extends ListenerAdapter {
 
         EventListener.guild.addRoleToMember(event.getMember(), EventListener.guild.getRoleById("769931144221163550")).queue();
 
+        System.out.println("member joined");
+
         guild.getGuildChannelById("776545594163331123")
                 .getManager()
                 .setName("\uD835\uDDAC" + "embers" + "\u2236" + guild.getMemberCount())

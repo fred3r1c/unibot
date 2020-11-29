@@ -92,10 +92,10 @@ public class MainBot {
         //System.out.println("test");
         //EventListener.guild.getMembersWithRoles(Rollen.events.values()).stream().forEach(member -> System.out.println(member.toString() + "\n\n"));
 
-        amongUsEvent();
-        scribbleEvent();
-        slfEvent();
-        freiesEvent();
+        //amongUsEvent();
+        //scribbleEvent();
+        //slfEvent();
+        //freiesEvent();
 
     }
 
