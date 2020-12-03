@@ -42,7 +42,7 @@ public class MainBot {
         try{
             JDABuilder builder = JDABuilder.createDefault(BOT_TOKEN);
             builder.enableIntents(GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_VOICE_STATES, GatewayIntent.GUILD_EMOJIS, GatewayIntent.DIRECT_MESSAGES, GatewayIntent.GUILD_PRESENCES, GatewayIntent.GUILD_MESSAGES, GatewayIntent.GUILD_MESSAGE_REACTIONS);
-            builder.setActivity(Activity.playing("Gaming Night 19:00Uhr!!!"));
+            builder.setActivity(Activity.playing("Rocket League"));
             builder.setChunkingFilter(ChunkingFilter.ALL);
             builder.setMemberCachePolicy(MemberCachePolicy.ALL);
             jda = builder.build();
