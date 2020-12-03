@@ -118,8 +118,6 @@ public class EventListener extends ListenerAdapter {
                 .setName("\uD835\uDDAC" + "embers" + "\u2236" + guild.getMemberCount())
                 .queue();
 
-        guild.text
-
     }
 
     @Override
