@@ -28,7 +28,7 @@ public class MainBot {
 	
     static{
 		Properties login = new Properties();
-		try (FileReader in = new FileReader("C:\\Users\\morip\\Desktop\\login.properties")){
+		try (FileReader in = new FileReader("C:\\Users\\morip\\OneDrive\\Desktop\\login.properties")){    //C:\Users\morip\OneDrive\Desktop
 			login.load(in);
 		} catch (Exception e){
 			try (FileReader in = new FileReader("//home//pi//login.properties")){
@@ -51,7 +51,7 @@ public class MainBot {
         } catch (LoginException | InterruptedException ignored){}
 
 
-
+        System.out.println("Test");
         //welcomeMessage();         //rdytogo
         //rollenMatheVorkurs();     //rdytogo
         //rollenModuleS1();         //rdytogo
