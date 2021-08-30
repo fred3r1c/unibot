@@ -51,7 +51,7 @@ public class MainBot {
         } catch (LoginException | InterruptedException ignored){}
 
 
-        System.out.println("Test");
+        System.out.println("Test2");
         //welcomeMessage();         //rdytogo
         //rollenMatheVorkurs();     //rdytogo
         //rollenModuleS1();         //rdytogo
