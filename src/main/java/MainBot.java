@@ -31,7 +31,7 @@ public class MainBot {
 		try (FileReader in = new FileReader("C:\\Users\\morip\\Desktop\\login.properties")){
 			login.load(in);
 		} catch (Exception e){
-			try (FileReader in = new FileReader("//root//login.properties")){
+			try (FileReader in = new FileReader("//home//pi//login.properties")){
 				login.load(in);
 			} catch (Exception ignored){}
 		}
