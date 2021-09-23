@@ -50,6 +50,10 @@ public class MainBot {
             jda.addEventListener(new EventListener());
         } catch (LoginException | InterruptedException ignored){}
 
+//        Message message = EventListener.guild.getTextChannelById("769930976012795906").getHistoryFromBeginning(100).complete().getMessageById("770091508208238603");
+//        message.addReaction("5️⃣").queue();
+//        message.addReaction("6️⃣").queue();
+
 
         System.out.println("Test5");
         //welcomeMessage();         //rdytogo

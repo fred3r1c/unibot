@@ -36,6 +36,8 @@ public class Rollen {
         module.put("2️⃣", guild.getRoleById("769590160886857770")); //Semester 2
         module.put("3️⃣", guild.getRoleById("768143954449268768")); //Semester 3
         module.put("4️⃣", guild.getRoleById("769590166213754920")); //Semester 4
+        module.put("5️⃣", guild.getRoleById("890598982496178196")); //Semester 5
+        module.put("6️⃣", guild.getRoleById("890599164432494632")); //Semester 6
 
         module.put("\uD83D\uDCC8", guild.getRoleById("764937834863001610")); //Analysis 1
         module.put("\uD83D\uDC7E", guild.getRoleById("764938020688101426")); //Digitaltechnik
